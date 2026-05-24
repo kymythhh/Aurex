@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurex - Premium Car Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="featured.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-car"></i> Aurex
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#showcase-section">Featured</a>
+            <a href="#features-section">About</a>
+            <a href="#contact-section">Contact Us</a>
+        </nav>
+        <div class="profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile Picture">
+            <span>My Account</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Premium Car Rental Experience</span>
+            <h1>Drive Your <br><span class="gradient-text">Dream Car</span></h1>
+            <p class="hero-title">Experience luxury and performance with our premium collection of vehicles. Book your perfect ride today.</p>
+            
+            <div class="heroBtn-main">
+                <a href="#showcase-section" class="hero-btn btn-white">Explore Cars <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="hero-btn btn-outline"><i class="fa-solid fa-car"></i> Rent Cars</button>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-section">
+                <div class="search-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="search-info">
+                    <label>Location</label>
+                    <input type="text" placeholder="Where?" />
+                </div>
+            </div>
+            <div class="search-section">
+                <div class="search-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="search-info">
+                    <label>Pick-up Date</label>
+                    <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" />
+                </div>
+            </div>
+            <div class="search-section">
+                <div class="search-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="search-info">
+                    <label>Return Date</label>
+                    <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" />
+                </div>
+            </div>
+            <button class="search-btn">Search Cars</button>
+        </div>
+    </section>
+
+    <section class="showcase-section" id="showcase-section">
+        <div class="sidebar-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+
+        <button class="arrow-btn arrow-left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="arrow-btn arrow-right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="showcase-outer-wrapper">
+            <div class="showcase-container">
+                <div class="text-bg-wrapper">
+                    <div class="brand-title" id="carBrand">Ford</div>
+                    <div class="model-title" id="carModel">Mustang</div>
+                </div>
+
+                <div class="car-image-wrapper">
+                    <img src="car.png" alt="Car Image" class="car-image" id="carImg">
+                </div>
+
+                <div class="cta-container">
+                    <button class="btn btn-primary">Rent Now</button>
+                    <button class="btn btn-secondary" id="detailsBtn">Details</button>
+                </div>
+            </div>
+
+            <div class="showcase-pagination">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="details-overlay" id="detailsOverlay">
+            <button class="close-panel-btn" id="closeDetailsBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="split-columns-container" id="panelColumnsContainer"></div>
+        </div>
+    </section>
+
+    <section class="features-value-section" id="features-section">
+        <div class="stats-grid-row">
+            <div class="stat-item-box">
+                <h2>500+</h2>
+                <p>Premium Cars</p>
+            </div>
+            <div class="stat-item-box">
+                <h2>10000+</h2>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item-box">
+                <h2>50+</h2>
+                <p>Locations</p>
+            </div>
+            <div class="stat-item-box">
+                <h2>99%</h2>
+                <p>Satisfaction Rate</p>
+            </div>
+        </div>
+
+        <div class="features-heading-block">
+            <h2>Why Choose Us</h2>
+            <p>Experience the difference with our premium service</p>
+        </div>
+
+        <div class="features-grid-cards">
+            <div class="feature-card">
+                <div class="icon-shield-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Fully Insured</h3>
+                <p>All our vehicles come with comprehensive insurance coverage</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-clock-box"><i class="fa-solid fa-clock"></i></div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer service for your convenience</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-thumbs-box"><i class="fa-solid fa-thumbs-up"></i></div>
+                <h3>Best Price</h3>
+                <p>Competitive rates with no hidden fees guaranteed</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-headset-box"><i class="fa-solid fa-headset"></i></div>
+                <h3>Easy Booking</h3>
+                <p>Simple and fast reservation process online</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-landing-section" id="contact-section">
+        <div class="contact-heading-block">
+            <h2>Connect With Us</h2>
+            <p>Reserve your premium experience or reach out to our global concierge support</p>
+        </div>
+        
+        <div class="contact-grid-layout">
+            <div class="contact-info-card">
+                <h3>Concierge Desk</h3>
+                <div class="info-item-row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Sampaloc</p>
+                </div>
+                <div class="info-item-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+63</p>
+                </div>
+                <div class="info-item-row">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>aurex@gmail.com</p>
+                </div>
+                <div class="info-item-row">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>Available 24/7 / 365 Days</p>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <form action="#" onsubmit="event.preventDefault(); alert('Message successfully sent to Aurex!');">
+                    <div class="form-input-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="form-input-group">
+                        <label>Your Message</label>
+                        <textarea rows="4" placeholder="How can our concierge team assist you?" required></textarea>
+                    </div>
+                    <button type="submit" class="message-btn btn-white">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="pagination">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </footer>
+
+    <script src="featured.js"></script>
+</body>
+</html>
