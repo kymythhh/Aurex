@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurex - Premium Car Rental</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="featured.css">
+    <link rel="stylesheet" href="styles/featured.css">
 </head>
 <body>
+    <div id="site-preloader">
+        <div class="loader-content">
+            <div class="loader-counter"><span id="loader-number">0</span>%</div>
+            <div class="loader-bar-bg">
+                <div id="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
 
     <header>
         <div class="logo">
@@ -15,8 +23,10 @@
         </div>
         <nav>
             <a href="#" class="active">Home</a>
+            <a href="#about-section">About</a>
             <a href="#showcase-section">Featured</a>
-            <a href="#features-section">About</a>
+            <a href="#ins-section">How It Works</a>
+            <a href="#features-section">Why Aurex</a>
             <a href="#contact-section">Contact Us</a>
         </nav>
         <div class="profile">
@@ -63,6 +73,29 @@
         </div>
     </section>
 
+    <section id="about-section" class="about-container">
+        <div class="about-content">
+            <span class="section-tagline">About Aurex</span>
+            <h2>Redefining The Luxury Driving Experience</h2>
+            <p>At Aurex, we believe that renting a premium vehicle should be as exhilarating as the drive itself. Founded with a passion for exceptional automobiles and unmatched service, we curate an exclusive fleet of the world’s finest cars to elevate your journey.</p>
+            <p>Whether you need a high-performance sports car for a weekend getaway or an executive sedan for a lasting impression, we deliver seamless sophistication right to your doorstep.</p>
+            
+            <div class="about-mini-stats">
+                <div class="mini-stat">
+                    <h3>5+ Years</h3>
+                    <p>Of Excellence</p>
+                </div>
+                <div class="mini-stat">
+                    <h3>100%</h3>
+                    <p>Guaranteed Fleet Maintenance</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-image-wrapper">
+            <img src="assets/about.jpg" alt="Premium Sports Car Dashboard" class="about-img">
+        </div>
+    </section>
+
     <section class="showcase-section" id="showcase-section">
         <div class="sidebar-social">
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -97,12 +130,44 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
 
         <div class="details-overlay" id="detailsOverlay">
             <button class="close-panel-btn" id="closeDetailsBtn"><i class="fa-solid fa-xmark"></i></button>
             <div class="split-columns-container" id="panelColumnsContainer"></div>
+        </div>
+    </section>
+
+    <section id="ins-section" class="steps-container">
+        <div class="steps-header">
+            <span class="section-tagline">Streamlined Process</span>
+            <h2>How It Works</h2>
+            <p>Get behind the wheel of your dream car in three simple, hassle-free steps.</p>
+        </div>
+
+        <div class="steps-grid">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3>Select Your Vehicle</h3>
+                <p>Browse through our premium fleet of meticulously curated supercars, luxury SUVs, and executive sedans to find your perfect match.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3>Choose Dates & Details</h3>
+                <p>Pick your rental duration, customize your pick-up or delivery location, and effortlessly complete your booking online.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3>Drive & Enjoy</h3>
+                <p>Receive your keys through our express delivery or contactless pickup option, start the engine, and experience true performance.</p>
+            </div>
         </div>
     </section>
 
@@ -211,6 +276,6 @@
         </div>
     </footer>
 
-    <script src="featured.js"></script>
+    <script src="script/featured.js"></script>
 </body>
 </html>
