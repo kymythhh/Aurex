@@ -446,7 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.body.classList.remove('loading-active');
                     document.body.classList.add('loading-complete');
 
-                    updateShowcase(0, 'next');
+                    if (carBrandEl) carBrandEl.textContent = carData[0].brand;
+                    if (carModelEl) carModelEl.textContent = carData[0].model;
+                    if (carImgEl) carImgEl.src = carData[0].imgSrc;
 
                 }, 1200);
             }, 250);
@@ -539,3 +541,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, initializationDelay);
 });
+
+    const showcaseObserverOptions = {
+        root: null,
+        threshold: 0.25
+    };
+
+    let showcaseAnimated = false;
+
+    const showcaseTriggerObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !showcaseAnimated) {
+                showcaseAnimated = true;
+                
+                updateShowcase(0, 'next');
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, showcaseObserverOptions);
+
+    const showcaseSection = document.getElementById('showcase-section');
+    if (showcaseSection) {
+        const obsDelay = document.body.classList.contains('loading-active') ? 1600 : 0;
+        setTimeout(() => {
+            showcaseTriggerObserver.observe(showcaseSection);
+        }, obsDelay);
+    }
