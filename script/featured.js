@@ -207,10 +207,10 @@ window.addEventListener('scroll', () => {
     const navLinks = document.querySelectorAll('header nav a');
     
     if (window.scrollY > 50) {
-        header.style.background = '#0d1520';
+        header.style.background = '#1A1A1A';
         header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
     } else {
-        header.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%)';
+        header.style.background = '#111110';
         header.style.boxShadow = 'none';
     }
 
