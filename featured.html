@@ -19,31 +19,41 @@
 
     <header>
         <div class="logo">
-            <i class="fa-solid fa-car"></i> Aurex
+            <img src="assets/Logo.png" alt="Aurex Logo">
+            <span>Aurex</span>
         </div>
-        <nav>
+        <nav class="nav-links">
             <a href="#" class="active">Home</a>
-            <a href="#about-section">About</a>
             <a href="#showcase-section">Featured</a>
+            <a href="#about-section">About</a>
             <a href="#ins-section">How It Works</a>
             <a href="#features-section">Why Aurex</a>
             <a href="#contact-section">Contact Us</a>
         </nav>
+
+        <div class="burger-toggle" id="burger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <div class="profile">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile Picture">
+            <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile Picture">
             <span>My Account</span>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">Premium Car Rental Experience</span>
-            <h1>Drive Your <br><span class="gradient-text">Dream Car</span></h1>
-            <p class="hero-title">Experience luxury and performance with our premium collection of vehicles. Book your perfect ride today.</p>
-            
-            <div class="heroBtn-main">
-                <a href="#showcase-section" class="hero-btn btn-white">Explore Cars <i class="fa-solid fa-arrow-right"></i></a>
-                <button class="hero-btn btn-outline"><i class="fa-solid fa-car"></i> Rent Cars</button>
+        <div class="hero-body">
+            <div class="hero-content">
+                <span class="hero-badge">Premium Car Rental Experience</span>
+                <h1>Drive Your <br><span class="gradient-text">Dream Car</span></h1>
+                <p class="hero-title">Experience luxury and performance with our premium collection of vehicles. Book your perfect ride today.</p>
+                    
+                <div class="heroBtn-main">
+                    <a href="#showcase-section" class="hero-btn btn-white">Explore Cars <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="hero-btn btn-outline"><i class="fa-solid fa-car"></i> Rent Cars</button>
+                </div>
             </div>
         </div>
 
@@ -73,38 +83,7 @@
         </div>
     </section>
 
-    <section id="about-section" class="about-container">
-        <div class="about-content">
-            <span class="section-tagline">About Aurex</span>
-            <h2>Redefining The Luxury Driving Experience</h2>
-            <p>At Aurex, we believe that renting a premium vehicle should be as exhilarating as the drive itself. Founded with a passion for exceptional automobiles and unmatched service, we curate an exclusive fleet of the world’s finest cars to elevate your journey.</p>
-            <p>Whether you need a high-performance sports car for a weekend getaway or an executive sedan for a lasting impression, we deliver seamless sophistication right to your doorstep.</p>
-            
-            <div class="about-mini-stats">
-                <div class="mini-stat">
-                    <h3>5+ Years</h3>
-                    <p>Of Excellence</p>
-                </div>
-                <div class="mini-stat">
-                    <h3>100%</h3>
-                    <p>Guaranteed Fleet Maintenance</p>
-                </div>
-            </div>
-        </div>
-        <div class="about-image-wrapper">
-            <img src="assets/about.jpg" alt="Premium Sports Car Dashboard" class="about-img">
-        </div>
-    </section>
-
     <section class="showcase-section" id="showcase-section">
-        <div class="sidebar-social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-        </div>
-
         <button class="arrow-btn arrow-left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="arrow-btn arrow-right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
 
@@ -137,6 +116,26 @@
         <div class="details-overlay" id="detailsOverlay">
             <button class="close-panel-btn" id="closeDetailsBtn"><i class="fa-solid fa-xmark"></i></button>
             <div class="split-columns-container" id="panelColumnsContainer"></div>
+        </div>
+    </section>
+
+    <section id="about-section" class="about-container">
+        <div class="about-content">
+            <span class="section-tagline">About Aurex</span>
+            <h2>Redefining The Luxury Driving Experience</h2>
+            <p>At Aurex, we believe that renting a premium vehicle should be as exhilarating as the drive itself. Founded with a passion for exceptional automobiles and unmatched service, we curate an exclusive fleet of the world’s finest cars to elevate your journey.</p>
+            <p>Whether you need a high-performance sports car for a weekend getaway or an executive sedan for a lasting impression, we deliver seamless sophistication right to your doorstep.</p>
+            
+            <div class="about-mini-stats">
+                <div class="mini-stat">
+                    <h3>5+ Years</h3>
+                    <p>Of Excellence</p>
+                </div>
+                <div class="mini-stat">
+                    <h3>100%</h3>
+                    <p>Guaranteed Fleet Maintenance</p>
+                </div>
+            </div>
         </div>
     </section>
 

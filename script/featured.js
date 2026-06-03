@@ -207,10 +207,17 @@ window.addEventListener('scroll', () => {
     const navLinks = document.querySelectorAll('header nav a');
     
     if (window.scrollY > 50) {
-        header.style.background = '#0d1520';
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+        header.style.background = 'rgba(26, 26, 26, 0.8)';
+        header.style.backdropFilter = 'blur(7px)';
+        header.style.webkitBackdropFilter = 'blur(7px)';
+        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+
     } else {
-        header.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%)';
+        header.style.background = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.webkitBackdropFilter = 'none';
+        header.style.borderBottom = 'none';
         header.style.boxShadow = 'none';
     }
 
@@ -235,13 +242,28 @@ window.addEventListener('scroll', () => {
             if (href === '#features-section') link.classList.add('active');
         } else if (scrollPosition >= sections.ins) {
             if (href === '#ins-section') link.classList.add('active');
-        } else if (scrollPosition >= sections.showcase) {
-            if (href === '#showcase-section') link.classList.add('active');
         } else if (scrollPosition >= sections.about) {
             if (href === '#about-section') link.classList.add('active');
+        } else if (scrollPosition >= sections.showcase) {
+            if (href === '#showcase-section') link.classList.add('active');
         } else {
             if (href === '#') link.classList.add('active');
         }
+    });
+});
+
+const burgerBtn = document.getElementById('burger-btn');
+const navMenu = document.querySelector('.nav-links');
+
+burgerBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    burgerBtn.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        burgerBtn.classList.remove('active');
     });
 });
 
