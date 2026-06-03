@@ -36,11 +36,6 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-
-        <div class="profile">
-            <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile Picture">
-            <span>My Account</span>
-        </div>
     </header>
 
     <section class="hero">
@@ -52,17 +47,29 @@
                     
                 <div class="heroBtn-main">
                     <a href="#showcase-section" class="hero-btn btn-white">Explore Cars <i class="fa-solid fa-arrow-right"></i></a>
-                    <button class="hero-btn btn-outline"><i class="fa-solid fa-car"></i> Rent Cars</button>
+                    <a href="#about-section" class="hero-btn btn-outline"><i class="fa-solid fa-car"></i> Learn More</a>
                 </div>
             </div>
         </div>
 
         <div class="search-container">
-            <div class="search-section">
-                <div class="search-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="search-info">
-                    <label>Location</label>
-                    <input type="text" placeholder="Where?" />
+            <div class="search-section dropdown-trigger" id="category-dropdown-trigger">
+                <div class="search-icon"><i class="fa-solid fa-car"></i></div>
+                    <div class="search-info">
+                    <label>CAR CATEGORY</label>
+
+                    <div class="selected-value">All Categories</div>
+
+                    <input type="hidden" name="car_category" id="car-category-input" value="">
+
+                    <ul class="custom-dropdown-list">
+                        <li data-value="">All Categories</li>
+                        <li data-value="sedan">Classic Car</li>
+                        <li data-value="suv">SUV</li>
+                        <li data-value="luxury">Van</li>
+                        <li data-value="sports">Sports Car</li>
+                        <li data-value="sports">Limousine</li>
+                    </ul>
                 </div>
             </div>
             <div class="search-section">
@@ -79,7 +86,9 @@
                     <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" />
                 </div>
             </div>
-            <button class="search-btn">Search Cars</button>
+            <a href="pages/cars.html">
+                <button class="search-btn">Search Cars</button>
+            </a>
         </div>
     </section>
 
