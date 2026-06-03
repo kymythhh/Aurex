@@ -1,4 +1,6 @@
-/* --- Reset & Global Variable Foundations --- */
+/* ==========================================================================
+   1. RESET, LAYOUT FOUNDATIONS & VARIABLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -14,11 +16,27 @@ body {
     overflow-x: hidden;
 }
 
+body.loading-active {
+    overflow-y: hidden;
+}
+
+main, header {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.loading-complete main,
+body.loading-complete header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
+    padding: 10px 5%;
     width: 100%;
     position: fixed;
     top: 0;
@@ -79,34 +97,12 @@ nav a:hover, nav a.active {
     transition: all 0.3s ease;
 }
 
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.profile img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #3C4144;
-}
-
-.profile span {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 .hero {
     min-height: 100vh;
     background:
-                linear-gradient(to bottom, rgba(13, 13, 12, 0) 70%, #111110 90%),
-                linear-gradient(to right, #0d0d0c 30%, rgba(13, 13, 12, 0.6) 60%, rgba(13, 13, 12, 0.2) 100%),
-                url('../assets/Hero.png');
+        linear-gradient(to bottom, rgba(13, 13, 12, 0) 70%, #111110 90%),
+        linear-gradient(to right, #0d0d0c 30%, rgba(13, 13, 12, 0.6) 60%, rgba(13, 13, 12, 0.2) 100%),
+        url('../assets/Hero.png');
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
@@ -116,7 +112,7 @@ nav a:hover, nav a.active {
     justify-content: center;
     padding: 0 8%;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero-body {
@@ -206,11 +202,9 @@ nav a:hover, nav a.active {
 
 .search-container {
     position: absolute;
-    width: 100%;
-    bottom: 40px;
+    bottom: 70px;
     left: 10%;
     right: 10%;
-    width: auto;
     background-color: rgba(20, 20, 19, 0.85);
     border: 1px solid #3C4144;
     backdrop-filter: blur(10px);
@@ -220,10 +214,12 @@ nav a:hover, nav a.active {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    z-index: 3;
+    z-index: 990 !important; /* Raised to overlay comfortably over slider bounds */
+    overflow: visible !important;
 }
 
 .search-section {
+    position: relative;
     flex: 1;
     display: flex;
     align-items: center;
@@ -233,6 +229,7 @@ nav a:hover, nav a.active {
     border-radius: 12px;
     border: 1px solid #3C4144;
     text-align: left;
+    z-index: 100;
 }
 
 .search-icon {
@@ -243,7 +240,8 @@ nav a:hover, nav a.active {
 .search-info {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .search-info label {
@@ -267,6 +265,78 @@ nav a:hover, nav a.active {
 
 .search-info input::placeholder {
     color: #B0B0B0;
+}
+
+.selected-value {
+    color: #B0B0B0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding-right: 20px;
+    position: relative;
+    margin-top: 2px;
+}
+
+.selected-value::after {
+    content: '▼';
+    font-size: 0.5rem;
+    color: #8c8c8c;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.search-section.open .selected-value::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-dropdown-list {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #111110;
+    border: 1px solid #3C4144;
+    border-radius: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 9999 !important;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out, transform 0.3s ease-out;
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.search-section.open .custom-dropdown-list {
+    max-height: 280px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 8px 0;
+    z-index: 10001 !important;
+    overflow: visible !important; /* FIXED: Prevents content truncation */
+}
+
+.search-section.open {
+    z-index: 10000 !important;
+}
+
+.custom-dropdown-list li {
+    padding: 12px 15px;
+    color: #B0B0B0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-dropdown-list li:hover {
+    background-color: #1c1c1a;
+    color: #E5A84B;
 }
 
 .search-btn {
@@ -294,6 +364,7 @@ nav a:hover, nav a.active {
     position: relative;
     padding: 120px 5% 60px 5%;
     background: #111110;
+    z-index: 1 !important; /* Set below absolute desktop dropdown layers */
 }
 
 .showcase-outer-wrapper {
@@ -423,14 +494,6 @@ nav a:hover, nav a.active {
     transform: translateY(-2px);
 }
 
-footer {
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: #111110;
-}
-
 .showcase-pagination {
     display: flex;
     gap: 12px;
@@ -468,6 +531,9 @@ footer {
     transform: translateY(0) !important;
 }
 
+/* ==========================================================================
+   6. ABOUT SECTION
+   ========================================================================== */
 .about-container {
     padding: 120px 8% 100px 8%;
     background: linear-gradient(to bottom, rgba(13, 13, 12, 0) 90%, #111110 100%),
@@ -536,6 +602,9 @@ footer {
     margin: 0;
 }
 
+/* ==========================================================================
+   7. RENTAL STEPS CARDS BLOCK
+   ========================================================================== */
 .steps-container {
     padding: 120px 8% 100px 8%;
     background: #111110;
@@ -622,6 +691,9 @@ footer {
     z-index: 2;
 }
 
+/* ==========================================================================
+   8. SPECIFICATIONS BOTTOM ACCORDION PANEL
+   ========================================================================== */
 .details-overlay {
     position: fixed;
     bottom: -100%;
@@ -687,7 +759,6 @@ footer {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-
     filter: grayscale(100%);
     transition: filter 0.5s ease, transform 0.6s ease;
 }
@@ -755,7 +826,7 @@ footer {
     pointer-events: none;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.1s ease 0.3s;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height(0.1s) ease 0.3s;
     margin-top: auto;
     margin-bottom: 20px;
     width: 100%;
@@ -865,13 +936,15 @@ footer {
 .minimize-btn { background-color: #74b9ff; color: #05070a; border: none; transform: rotate(180deg); }
 .spec-column:hover .minimize-btn { color: #05070a; background-color: #5ea3eb; }
 
+/* ==========================================================================
+   9. VALUES, BENEFITS & STATS NUMBERS
+   ========================================================================== */
 .features-value-section {
     background: #111110;
     padding: 100px 8% 120px 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #3C4144;
 }
 
 .stats-grid-row {
@@ -970,6 +1043,9 @@ footer {
     line-height: 1.6;
 }
 
+/* ==========================================================================
+   10. CONTACT SECTION & FOOTER
+   ========================================================================== */
 .contact-landing-section {
     padding: 100px 8%;
     background: #111110;
@@ -1049,6 +1125,22 @@ footer {
     letter-spacing: 1px;
 }
 
+.form-input-group input, .form-input-group textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #3C4144;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input-group input:focus, .form-input-group textarea:focus {
+    outline: none;
+    border-color: #CB973D;
+}
+
 .message-btn {
     background-color: #E5A84B;
     color: #000;
@@ -1073,111 +1165,17 @@ footer {
     transform: translateY(-2px);
 }
 
-.form-input-group input, .form-input-group textarea {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid #3C4144;
-    border-radius: 8px;
-    padding: 12px 16px;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: border-color 0.3s ease;
+footer {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #111110;
 }
 
-.form-input-group input:focus, .form-input-group textarea:focus {
-    outline: none;
-    border-color: #CB973D;
-}
-
-@media (max-width: 1024px) {
-    .stats-grid-row { grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 80px; }
-    .features-grid-cards { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-}
-
-@media (max-width: 900px) {
-    .model-title { font-size: 4rem; }
-    .brand-title { font-size: 2rem; }
-    
-    .search-widget-container { flex-direction: column; padding: 20px; }
-    .search-field-block { width: 100%; }
-    .widget-search-submit-btn { width: 100%; }
-    .split-columns-container { flex-direction: column; }
-    .spec-column { width: 100%; flex: 1; }
-    .spec-column.expanded { flex: 4; }
-}
-
-@media (max-width: 600px) {
-    .model-title { 
-        font-size: 2.8rem; 
-        line-height: 1.1; 
-        letter-spacing: 1px;
-    } 
-    .brand-title { 
-        font-size: 1.5rem; 
-    }
-
-    .stats-grid-row { grid-template-columns: 1fr; }
-    .features-grid-cards { grid-template-columns: 1fr; }
-    .feature-card { align-items: center; text-align: center; }
-}
-
-@media (max-width: 991px) {
-    .hero-body {
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 180px;
-    }
-    .hero-content {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    .heroBtn-main {
-        justify-content: center;
-    }
-    .hero-image img {
-        transform: none;
-        max-width: 100%;
-    }
-    .search-container {
-        flex-direction: column;
-        bottom: 20px;
-    }
-    .search-section {
-        width: 100%;
-    }
-    .search-btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-    .about-content h2, .steps-header h2 {
-        font-size: 2.2rem;
-    }
-    .step-card {
-        align-items: center;
-        text-align: center;
-    }
-    .step-number {
-        right: 50%;
-        transform: translateX(50%);
-        top: 15px;
-    }
-}
-
+/* ==========================================================================
+   11. ANIMATIONS & PRELOADER
+   ========================================================================== */
 #site-preloader {
     position: fixed;
     top: 0;
@@ -1223,26 +1221,6 @@ footer {
     transition: width 0.1s linear;
 }
 
-body {
-    overflow-x: hidden;
-}
-
-body.loading-active {
-    overflow-y: hidden;
-}
-
-main, header {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-body.loading-complete main,
-body.loading-complete header {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 #site-preloader.show-brand .loader-bar-bg {
     opacity: 0;
     transform: translateY(10px);
@@ -1272,22 +1250,15 @@ body.loading-complete header {
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 
+/* ==========================================================================
+   12. MEDIA QUERIES (RESPONSIVENESS RANGES)
+   ========================================================================== */
 @media (max-width: 1120px) {
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2cap 5%;
-    }
-
-    .logo {
-        order: 1;
-    }
-
-    .profile, .profile-img {
-        order: 2;
-        margin-left: auto;
-        margin-right: 20px;
+        padding: 5px 5%;
     }
 
     .burger-toggle {
@@ -1326,57 +1297,187 @@ body.loading-complete header {
         padding-top: 100px;
         gap: 30px;
         z-index: 999;
-        transition: right 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        margin-left: 0;
-        font-size: 20px;
-    }
-
-    .burger-toggle.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .burger-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .burger-toggle.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transition: right 0.4s ease; /* FIXED: Closed missing properties */
     }
 }
 
+@media (max-width: 1024px) {
+    .stats-grid-row { grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 80px; }
+    .features-grid-cards { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .about-container { grid-template-columns: 1fr; gap: 40px; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991px) {
+    .hero-body {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .hero-content {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .heroBtn-main {
+        justify-content: center;
+    }
+    .hero-image img {
+        transform: none;
+        max-width: 100%;
+    }
+
+    /* --- Mobile Responsive Search Panel Form --- */
+    .search-container {
+        flex-direction: column;
+        position: relative; 
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto 30px auto;
+        gap: 12px;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow: visible !important;
+        z-index: 990 !important;
+    }
+    
+    .search-section {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex;
+        align-items: center;
+        overflow: visible !important; 
+    }
+    
+    .search-section.open {
+        z-index: 1000 !important;
+    }
+    
+    .search-section .custom-dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 99999 !important; 
+        box-sizing: border-box;
+    }
+
+    .search-section.open .custom-dropdown-list {
+        max-height: 280px;
+        opacity: 1;
+        transform: translateY(0);
+        padding: 8px 0;
+        z-index: 10001 !important;
+        overflow: visible !important;
+    }
+
+    .search-card button, 
+    button[class*="search"] { 
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 28px;
+        height: auto;
+        min-height: 48px;
+        width: fit-content;
+        
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #000000;
+        background-color: #e5a950;
+        
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    /* --- Mobile Responsive Showcase Slider (Grid-Stack Rule Engine) --- */
+    .showcase-section,
+    .showcase-outer-wrapper,
+    .car-image-wrapper { 
+        overflow: visible !important; 
+    }
+
+    .showcase-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        align-items: center !important;
+        gap: 25px !important;
+        height: auto !important;
+        min-height: auto !important;
+        position: relative !important;
+        padding: 40px 20px !important;
+    }
+
+    .text-bg-wrapper {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .car-image-wrapper {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 420px !important;
+        margin: 0 auto !important; 
+    }
+
+    .cta-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 10px auto 0 auto !important;
+        z-index: 100 !important;
+    }
+
+    .showcase-section {
+        padding-bottom: 60px !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .model-title { font-size: 4rem; }
+    .brand-title { font-size: 2rem; }
+    
+    .search-widget-container { flex-direction: column; padding: 20px; }
+    .search-field-block { width: 100%; }
+    .widget-search-submit-btn { width: 100%; }
+    
+    .split-columns-container { flex-direction: column; }
+    .spec-column { width: 100%; flex: 1; }
+    .spec-column.expanded { flex: 4; }
+}
+
 @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .about-content h2, .steps-header h2 { font-size: 2.2rem; }
+    .step-card { align-items: center; text-align: center; }
+    .step-number { right: 50%; transform: translateX(50%); top: 15px; }
+}
 
-    .contact-grid-layout {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 100%;
-        padding: 0 5%;
-        box-sizing: border-box;
-    }
-
-    .contact-info-card, 
-    .contact-form-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        box-sizing: border-box;
-    }
-
-    .form-input-group {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    input, textarea {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
+@media (max-width: 600px) {
+    .model-title { font-size: 2.8rem; line-height: 1.1; letter-spacing: 1px; } 
+    .brand-title { font-size: 1.5rem; }
+    .stats-grid-row { grid-template-columns: 1fr; }
+    .features-grid-cards { grid-template-columns: 1fr; }
+    .feature-card { align-items: center; text-align: center; }
 }

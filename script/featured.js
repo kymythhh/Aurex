@@ -590,3 +590,32 @@ document.addEventListener("DOMContentLoaded", () => {
             showcaseTriggerObserver.observe(showcaseSection);
         }, obsDelay);
     }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownTrigger = document.getElementById('category-dropdown-trigger');
+    const selectedValueDiv = dropdownTrigger.querySelector('.selected-value');
+    const hiddenInput = document.getElementById('car-category-input');
+    const listItems = dropdownTrigger.querySelectorAll('.custom-dropdown-list li');
+
+    dropdownTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownTrigger.classList.toggle('open');
+    });
+
+    listItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const value = item.getAttribute('data-value');
+        const text = item.textContent;
+
+        selectedValueDiv.textContent = text;
+        hiddenInput.value = value;
+        
+        dropdownTrigger.classList.remove('open');
+        });
+    });
+
+    document.addEventListener('click', () => {
+        dropdownTrigger.classList.remove('open');
+    });
+});
