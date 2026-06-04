@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. RESET, LAYOUT FOUNDATIONS & VARIABLES
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -214,8 +211,6 @@ nav a:hover, nav a.active {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    z-index: 990 !important; /* Raised to overlay comfortably over slider bounds */
-    overflow: visible !important;
 }
 
 .search-section {
@@ -304,7 +299,6 @@ nav a:hover, nav a.active {
     padding: 0;
     margin: 0;
     list-style: none;
-    z-index: 9999 !important;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -318,12 +312,7 @@ nav a:hover, nav a.active {
     opacity: 1;
     transform: translateY(0);
     padding: 8px 0;
-    z-index: 10001 !important;
-    overflow: visible !important; /* FIXED: Prevents content truncation */
-}
-
-.search-section.open {
-    z-index: 10000 !important;
+    overflow: visible !important;
 }
 
 .custom-dropdown-list li {
@@ -364,7 +353,7 @@ nav a:hover, nav a.active {
     position: relative;
     padding: 120px 5% 60px 5%;
     background: #111110;
-    z-index: 1 !important; /* Set below absolute desktop dropdown layers */
+    z-index: 1 !important;
 }
 
 .showcase-outer-wrapper {
@@ -471,13 +460,13 @@ nav a:hover, nav a.active {
     text-transform: capitalize;
 }
 
-.btn-primary { 
-    background-color: #E5A84B; 
-    color: #000; 
-    border: 1px solid #3C4144; 
+.btn-primary {
+    background-color: #E5A84B;
+    color: #000;
+    border: 1px solid #3C4144;
 }
-.btn-primary:hover { 
-    background-color: #CB973D; 
+.btn-primary:hover {
+    background-color: #CB973D;
     box-shadow: 0 8px 20px #CB973D33;
 }
 
@@ -531,9 +520,6 @@ nav a:hover, nav a.active {
     transform: translateY(0) !important;
 }
 
-/* ==========================================================================
-   6. ABOUT SECTION
-   ========================================================================== */
 .about-container {
     padding: 120px 8% 100px 8%;
     background: linear-gradient(to bottom, rgba(13, 13, 12, 0) 90%, #111110 100%),
@@ -602,9 +588,6 @@ nav a:hover, nav a.active {
     margin: 0;
 }
 
-/* ==========================================================================
-   7. RENTAL STEPS CARDS BLOCK
-   ========================================================================== */
 .steps-container {
     padding: 120px 8% 100px 8%;
     background: #111110;
@@ -691,9 +674,6 @@ nav a:hover, nav a.active {
     z-index: 2;
 }
 
-/* ==========================================================================
-   8. SPECIFICATIONS BOTTOM ACCORDION PANEL
-   ========================================================================== */
 .details-overlay {
     position: fixed;
     bottom: -100%;
@@ -712,9 +692,9 @@ nav a:hover, nav a.active {
     position: absolute;
     top: -55px;
     right: 5%;
-    background: #243346;
+    background: #E5A84B;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    color: black;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -728,7 +708,7 @@ nav a:hover, nav a.active {
     z-index: 110;
 }
 
-.close-panel-btn:hover { background-color: #1a2635; transform: scale(1.05); }
+.close-panel-btn:hover { background-color: #CB973D; transform: scale(1.05); }
 
 .split-columns-container {
     display: flex;
@@ -815,9 +795,9 @@ nav a:hover, nav a.active {
 .live-dot {
     width: 6px;
     height: 6px;
-    background-color: #74b9ff;
+    background-color: #E5A84B;
     border-radius: 50%;
-    box-shadow: 0 0 8px #74b9ff;
+    box-shadow: 0 0 8px #E5A84B;
 }
 
 .spec-main-content {
@@ -885,7 +865,7 @@ nav a:hover, nav a.active {
     font-size: 11px;
     color: #ccc;
 }
-.spec-pills-row .highlight-pill { background-color: #74b9ff; color: #05070a; font-weight: 600; }
+.spec-pills-row .highlight-pill { background-color: #E5A84B; color: #05070a; font-weight: 600; }
 
 .parts-title {
     position: absolute;
@@ -900,7 +880,7 @@ nav a:hover, nav a.active {
 }
 
 .spec-column:hover .parts-title {
-    color: #74b9ff;
+    color: #E5A84B;
 }
 
 .expanded .parts-title { opacity: 0; pointer-events: none; }
@@ -929,16 +909,13 @@ nav a:hover, nav a.active {
 }
 
 .spec-column:hover .action-circle-btn {
-    border-color: #74b9ff;
-    color: #74b9ff;
+    border-color: #E5A84B;
+    color: #E5A84B;
 }
 
-.minimize-btn { background-color: #74b9ff; color: #05070a; border: none; transform: rotate(180deg); }
-.spec-column:hover .minimize-btn { color: #05070a; background-color: #5ea3eb; }
+.minimize-btn { background-color: #E5A84B; color: #05070a; border: none; transform: rotate(180deg); }
+.spec-column:hover .minimize-btn { color: #05070a; background-color: #E5A84B; }
 
-/* ==========================================================================
-   9. VALUES, BENEFITS & STATS NUMBERS
-   ========================================================================== */
 .features-value-section {
     background: #111110;
     padding: 100px 8% 120px 8%;
@@ -1043,9 +1020,6 @@ nav a:hover, nav a.active {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   10. CONTACT SECTION & FOOTER
-   ========================================================================== */
 .contact-landing-section {
     padding: 100px 8%;
     background: #111110;
@@ -1173,9 +1147,6 @@ footer {
     background-color: #111110;
 }
 
-/* ==========================================================================
-   11. ANIMATIONS & PRELOADER
-   ========================================================================== */
 #site-preloader {
     position: fixed;
     top: 0;
@@ -1250,9 +1221,6 @@ footer {
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
 
-/* ==========================================================================
-   12. MEDIA QUERIES (RESPONSIVENESS RANGES)
-   ========================================================================== */
 @media (max-width: 1120px) {
     header {
         display: flex;
@@ -1281,6 +1249,22 @@ footer {
         transition: all 0.3s ease;
     }
 
+    .nav-links.active {
+        right: 0;
+    }
+
+    .burger-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -1297,7 +1281,7 @@ footer {
         padding-top: 100px;
         gap: 30px;
         z-index: 999;
-        transition: right 0.4s ease; /* FIXED: Closed missing properties */
+        transition: right 0.4s ease;
     }
 }
 
@@ -1326,7 +1310,6 @@ footer {
         max-width: 100%;
     }
 
-    /* --- Mobile Responsive Search Panel Form --- */
     .search-container {
         flex-direction: column;
         position: relative; 
@@ -1339,8 +1322,6 @@ footer {
         gap: 12px;
         padding: 15px;
         box-sizing: border-box;
-        overflow: visible !important;
-        z-index: 990 !important;
     }
     
     .search-section {
@@ -1348,7 +1329,6 @@ footer {
         box-sizing: border-box !important;
         display: flex;
         align-items: center;
-        overflow: visible !important; 
     }
     
     .search-section.open {
@@ -1360,7 +1340,6 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        z-index: 99999 !important; 
         box-sizing: border-box;
     }
 
@@ -1369,8 +1348,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
         padding: 8px 0;
-        z-index: 10001 !important;
-        overflow: visible !important;
     }
 
     .search-card button, 
@@ -1395,7 +1372,6 @@ footer {
         box-sizing: border-box;
     }
 
-    /* --- Mobile Responsive Showcase Slider (Grid-Stack Rule Engine) --- */
     .showcase-section,
     .showcase-outer-wrapper,
     .car-image-wrapper { 
