@@ -63,3 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCars(window.cars);
 });
+
+window.addEventListener("scroll", function () {
+    const logo = document.querySelector(".logo");
+
+    if (window.scrollY > 50) {
+        logo.classList.add("hide-logo");
+    } else {
+        logo.classList.remove("hide-logo");
+    }
+});
