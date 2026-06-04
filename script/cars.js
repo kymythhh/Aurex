@@ -137,7 +137,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Extreme Ground-Effect & Massive Wing Downforce",
-            image: "assets/Sports Cars/2016 Dodge Viper ACR/Rear.jpg",
+            image: "assets/Sports Cars/2016 Dodge Viper ACR/rear.jpg",
 
             rearSpoiler: "1,876mm Wide Adjustable Dual-Element Carbon Fiber Extreme Aero Wing",
             frontSplitter: "Extended Carbon Fiber Front Splitter with Removable Extension & Dive Planes",
@@ -151,7 +151,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Hardcore Mechanical Coilovers & Matrix Anchors",
-            image: "assets/Sports Cars/2016 Dodge Viper ACR/brakes.jpg",
+            image: "assets/Sports Cars/2016 Dodge Viper ACR/side.jpg",
 
             frontCalipers: "Brembo 6-Piston Carbon Ceramic Matrix (CCM) Calipers",
             rearCalipers: "Brembo 4-Piston Carbon Ceramic Matrix (CCM) Calipers",
@@ -204,7 +204,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Digital Telemetry & Grand-Touring Cockpit",
-            image: "assets/Sports Cars/2024 Nissan GT-R/Interior.jpg",
+            image: "assets/Sports Cars/2024 Nissan GT-R (R35)/interior.jpg",
 
             clusterScreen: "Multi-Function Analog Instrument Cluster with Digital Gear Indicator",
             centerDisplay: "8.0-inch Touchscreen Infotainment System",
@@ -220,7 +220,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Streamlined Low-Drag Efficiency & Thermals",
-            image: "assets/Sports Cars/2024 Nissan GT-R/Rear.jpg",
+            image: "assets/Sports Cars/2024 Nissan GT-R (R35)/rear.jpg",
 
             rearSpoiler: "Redesigned High-Downforce Swan-Neck Wing Structure",
             frontSplitter: "Facelifted Extended Front Fascia with Thin Mesh Venting",
@@ -234,7 +234,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Predictive All-Wheel Drive Posture & Anchors",
-            image: "assets/Sports Cars/2024 Nissan GT-R/brakes.jpg",
+            image: "assets/Sports Cars/2024 Nissan GT-R (R35)/Side.jpg",
 
             frontCalipers: "Brembo Monobloc 6-Piston Calipers",
             rearCalipers: "Brembo Monobloc 4-Piston Calipers",

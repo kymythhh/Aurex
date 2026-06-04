@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             carsContainer.innerHTML += `
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
 
-                <a href="car-details.html?id=${index}" class="car-card-link">
+                <a href="car-details.html?id=${car.id}" class="car-card-link">
 
                     <div class="car-card">
 
