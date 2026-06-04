@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurex - Car Profile Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/all-cars.css"> 
+    <link rel="stylesheet" href="styles/car-details.css">
+</head>
+<body>
+
+    <!-- NAV HEADER -->
+    <header>
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Aurex Logo">
+            <span>Aurex</span>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="page-content">
+        <div class="container py-4 mt-5">
+
+            <div class="mb-4">
+                <p class="breadcrumb mb-0">
+                    <span><a href="index.html">Home</a> › <a href="all-cars.html">Cars</a> › <a class="active" id="breadcrumb-car">Loading...</a></span>
+                </p>
+            </div>
+
+            <!-- DASHBOARD CONTAINER GRID -->
+            <div class="row g-4 position-relative">
+                
+                <!-- LEFT HALF: HERO SHOWCASE & DYNAMIC SPECIFICATION CARDS -->
+                <div class="col-lg-8">
+                    
+                    <!-- Dynamic Header Info -->
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <span class="track-focus-badge" id="carCategory">TRACK FOCUS</span>
+                            <span class="rating-badge"><i class="fas fa-star text-warning"></i> <span id="carRating">0.0</span></span>
+                        </div>
+                        <h1 class="car-main-title text-white fw-bold" id="carName">Loading Asset...</h1>
+                    </div>
+
+                    <!-- Gallery Showcase -->
+                    <div class="gallery-wrapper mb-4">
+
+                         <div class="hero-image-container">
+                           <img id="mainCarImage"
+                            src=""
+                              alt="Car Showcase"
+                                 class="img-fluid w-100 rounded-4">
+                   </div>
+
+                          <div class="thumbnail-gallery mt-3" id="thumbnailGallery">
+                   </div>
+
+                        </div>
+
+                    <!-- PREMIUM PANEL WRAPPERS -->
+                    <div class="specs-wrapper">
+                        
+                        <!-- 01 Powertrain Panel -->
+                        <div class="premium-spec-card p-4 mb-4" id="card-powertrain">
+                            <div class="row g-4">
+                                <div class="col-md-5 img-col">
+                                    <span class="section-num mb-2 d-inline-block">01</span>
+                                    <h4 class="text-white fw-bold id-title" id="powertrainTitle">Powertrain & Propulsion</h4>
+                                    <p class="text-muted small" id="powertrainSubtitle"></p>
+                                    <div class="mt-2 image-frame">
+                                        <img id="powertrainImage" src="" class="img-fluid rounded-3" alt="Powertrain View">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 text-col">
+                                    <div class="row g-3" id="powertrainGrid"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 02 Cockpit Panel -->
+                        <div class="premium-spec-card p-4 mb-4" id="card-cockpit">
+                            <div class="row g-4">
+                                <div class="col-md-5 img-col">
+                                    <span class="section-num mb-2 d-inline-block">02</span>
+                                    <h4 class="text-white fw-bold id-title" id="cockpitTitle">Cockpit & Infotainment</h4>
+                                    <p class="text-muted small" id="cockpitSubtitle"></p>
+                                    <div class="mt-2 image-frame">
+                                        <img id="cockpitImage" src="" class="img-fluid rounded-3" alt="Cockpit View">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 text-col">
+                                    <div class="d-flex flex-column h-100 justify-content-between">
+                                        <div class="row g-3" id="cockpitGrid"></div>
+                                        <div class="feature-tag-container mt-3" id="cockpitPills"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 Aerodynamics Panel -->
+                        <div class="premium-spec-card p-4 mb-4" id="card-aerodynamics">
+                            <div class="row g-4">
+                                <div class="col-md-6 text-col">
+                                    <span class="section-num mb-2 d-inline-block">03</span>
+                                    <h4 class="text-white fw-bold id-title" id="aeroTitle">Aerodynamics & Body Management</h4>
+                                    <p class="text-muted small" id="aeroSubtitle"></p>
+                                    <div class="row g-3" id="aeroGrid"></div>
+                                </div>
+                                <div class="col-md-6 img-col d-flex flex-column justify-content-between">
+                                    <div class="image-frame h-100 mb-3">
+                                        <img id="aeroImage" src="" class="img-fluid rounded-3 h-100 object-fit-cover" alt="Aero Profile">
+                                    </div>
+                                    <div class="feature-tag-container" id="aeroPills"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 04 Chassis Panel -->
+                        <div class="premium-spec-card p-4 mb-4" id="card-chassis">
+                            <div class="row g-4">
+                                <div class="col-md-5 img-col">
+                                    <span class="section-num mb-2 d-inline-block">04</span>
+                                    <h4 class="text-white fw-bold id-title" id="chassisTitle">Chassis & Braking Dynamics</h4>
+                                    <p class="text-muted small" id="chassisSubtitle"></p>
+                                    <div class="mt-2 image-frame">
+                                        <img id="chassisImage" src="" class="img-fluid rounded-3" alt="Chassis Metrics">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 text-col">
+                                    <div class="d-flex flex-column h-100 justify-content-between">
+                                        <div class="row g-3" id="chassisGrid"></div>
+                                        <div class="feature-tag-container mt-3" id="chassisPills"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                 <!-- Car Description Block -->
+                    <div class="premium-spec-card p-4">
+                        <h4 class="text-white mb-3 fw-bold" style="font-size: 16px;">Description</h4>
+
+                        <p id="carDescription"
+                        class="car-description lh-lg mb-0"
+                        style="font-size: 13.5px; text-align: justify;">
+                        </p>
+                    </div>
+
+                    </div> <!-- END specs-wrapper -->
+
+                    </div> <!-- END col-lg-8 -->
+
+                    <!-- RIGHT HALF: STICKY DESKTOP SCHEDULER PANEL -->
+                    <div class="col-lg-4">
+                    <div class="booking-sticky-sidebar">
+                        <div class="booking-card p-4 rounded-4">
+                            
+                            <div class="d-flex align-items-baseline mb-4">
+                                <span class="display-5 text-white fw-bold" id="carPrice">$0</span>
+                                <span class="text-muted ms-2">/ day</span>
+                            </div>
+
+                            <form id="bookingForm">
+                                <div class="mb-4">
+                                    <label class="form-label-custom"><i class="far fa-calendar me-2"></i>SCHEDULE BOOKING</label>
+                                    
+                                    <div class="mb-3">
+                                        <small class="date-input-subtitle">Pick-Up Date Selection</small>
+                                        <input type="date" class="form-input-custom" required>
+                                    </div>
+
+                                    <div>
+                                        <small class="date-input-subtitle">Return Date Selection</small>
+                                        <input type="date" class="form-input-custom" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label-custom"><i class="fas fa-map-marker-alt me-2"></i>PREFERRED COLLECTION TERMINAL</label>
+                                    <input type="text" class="form-input-custom" placeholder="e.g., Airport Terminal 1, Sampaloc, Manila" required>
+                                </div>
+
+                                <button type="submit" class="btn-confirm-booking w-100 py-3 fw-bold rounded-3">
+                                    Confirm & Book Ride
+                                </button>
+                            </form>
+
+                            <div class="text-center mt-3 text-muted" style="font-size: 12px;">
+                                <i class="fas fa-shield-alt text-success me-1"></i> Includes Track-Ready Structural Insurance Cover
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script/cars.js"></script>
+    <script src="script/car-details.js"></script>
+</body>
+</html>

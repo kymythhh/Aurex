@@ -1,0 +1,187 @@
+:root {
+    --bg-main: #0B0B0B;
+    --surface-card: #111111;
+    --gold-accent: #E5A84B;
+    --border-subtle: #1C1C1C;
+    --text-white: #EEEEEE;
+    --text-dim: #8A8A8A;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dim);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+}
+
+/* --- Layout & Typography --- */
+h1, h2, h3, .car-main-title, .id-title {
+    color: #FFF;
+}
+
+.car-description, 
+.descr {
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .active {
+    color: var(--gold-accent);
+    pointer-events: none;
+}
+
+/* --- Badges --- */
+.track-focus-badge, 
+.rating-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.track-focus-badge {
+    background: rgba(229, 168, 75, 0.08);
+    color: var(--gold-accent);
+}
+
+.rating-badge {
+    background: #141414;
+    color: #FFF;
+}
+
+/* --- Spec Panels --- */
+.premium-spec-card p {
+    color: var(--text-white) !important;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+.section-num {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-accent);
+}
+
+/* IMPROVED READABILITY: Subtitle text is now set to --text-white */
+.spec-meta-subtitle {
+    color: var(--text-white);
+    font-size: 13px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+.spec-item-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.spec-icon-wrapper {
+    color: var(--gold-accent);
+    font-size: 13px;
+}
+
+.spec-meta-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.spec-meta-value {
+    font-size: 13px;
+    color: var(--text-white);
+}
+
+/* --- Booking Sidebar --- */
+.booking-sticky-sidebar {
+    position: sticky;
+    top: 40px;
+}
+
+.booking-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.form-label-custom {
+    color: var(--text-white);
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-input-custom {
+    width: 100%;
+    background: #090909;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-white);
+    padding: 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.btn-confirm-booking {
+    width: 100%;
+    padding: 12px;
+    background: var(--gold-accent);
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-confirm-booking:hover {
+    background: #f0b861;
+}
+
+/* --- Gallery --- */
+.thumbnail-gallery {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.thumbnail-gallery img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-gallery img.active {
+    border-color: var(--gold-accent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+    .booking-sticky-sidebar {
+        position: static;
+    }
+}
