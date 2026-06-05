@@ -197,6 +197,8 @@ nav a:hover, nav a.active {
     transform: translateY(-2px);
 }
 
+/*search*/
+
 .search-container {
     position: absolute;
     bottom: 70px;
@@ -325,6 +327,13 @@ nav a:hover, nav a.active {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.custom-dropdown-list li i {
+    margin-right: 10px;
+    color: #E5A84B;
+    width: 18px;
+    text-align: center;
+}
+
 .custom-dropdown-list li:hover {
     background-color: #1c1c1a;
     color: #E5A84B;
@@ -342,10 +351,54 @@ nav a:hover, nav a.active {
     transition: background-color 0.2s, transform 0.2s;
 }
 
+/*Bug Fix*/
+.search-container,
+.search-section,
+.search-info,
+.custom-dropdown-list,
+.custom-dropdown-list li,
+.custom-dropdown-list li i {
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+}
+
+.search-section {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.search-icon i, 
+.custom-dropdown-list li i {
+    display: inline-block !important;
+    background: transparent !important;
+    width: auto !important;
+    height: auto !important;
+}
+
 .search-btn:hover {
     background-color: #CB973D;
     transform: scale(1.02);
 }
+
+.dark-date-picker {
+    color-scheme: dark;
+    background: transparent;
+    border: none;
+    color: #B0B0B0;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    width: 100%;
+}
+
+.dark-date-picker::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(72%) sepia(48%) saturate(541%) hue-rotate(341deg) brightness(96%) contrast(89%); 
+}
+
+/*featured*/
 
 .showcase-section {
     min-height: 80vh;
@@ -521,6 +574,7 @@ nav a:hover, nav a.active {
     transform: translateY(0) !important;
 }
 
+/*about*/
 .about-container {
     padding: 120px 8% 100px 8%;
     background: linear-gradient(to bottom, rgba(13, 13, 12, 0) 90%, #111110 100%),
@@ -588,6 +642,8 @@ nav a:hover, nav a.active {
     font-weight: 500;
     margin: 0;
 }
+
+/*steps*/
 
 .steps-container {
     padding: 120px 8% 100px 8%;
@@ -675,6 +731,7 @@ nav a:hover, nav a.active {
     z-index: 2;
 }
 
+/*featured cars - details*/
 .details-overlay {
     position: fixed;
     bottom: -100%;
@@ -917,6 +974,7 @@ nav a:hover, nav a.active {
 .minimize-btn { background-color: #E5A84B; color: #05070a; border: none; transform: rotate(180deg); }
 .spec-column:hover .minimize-btn { color: #05070a; background-color: #E5A84B; }
 
+/*why*/
 .features-value-section {
     background: #111110;
     padding: 100px 8% 120px 8%;
@@ -1021,6 +1079,7 @@ nav a:hover, nav a.active {
     line-height: 1.6;
 }
 
+/*contact*/
 .contact-landing-section {
     padding: 100px 8%;
     background: #111110;
@@ -1651,4 +1710,23 @@ footer {
         width: 100% !important;
         box-sizing: border-box;
     }
+}
+
+html.bypass-preloader #site-preloader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+html.bypass-preloader body {
+    overflow: visible !important;
+    overflow-y: auto !important;
+}
+
+html.bypass-preloader .reveal-element {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
 }

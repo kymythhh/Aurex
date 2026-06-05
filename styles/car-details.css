@@ -31,13 +31,13 @@ h1, h2, h3, .car-main-title, .id-title {
 }
 
 .breadcrumb a {
-    color: #4A90E2;
+    color: #B0B0B0;
     text-decoration: none;
     font-size: 13px;
 }
 
 .breadcrumb a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .breadcrumb .active {

@@ -2,14 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const carsContainer = document.getElementById("carsContainer");
 
-    // dropdown elements
     const categoryDropdown = document.getElementById("categoryDropdown");
     const priceDropdown = document.getElementById("priceDropdown");
 
     const categorySelected = categoryDropdown.querySelector(".dropdown-selected span");
     const priceSelected = priceDropdown.querySelector(".dropdown-selected span");
 
-    let selectedCategory = "All";
+    const rawSearchCategory = localStorage.getItem('search_category');
+    let mappedCategory = "All";
+
+    if (rawSearchCategory) {
+        const searchLower = rawSearchCategory.toLowerCase().trim();
+        if (searchLower === "sports") mappedCategory = "Sports Car";
+        else if (searchLower === "suv") mappedCategory = "Luxury SUV";
+        else if (searchLower === "luxury") mappedCategory = "Luxury Van";
+        else if (searchLower === "sedan" || searchLower === "classic") mappedCategory = "Classic Car";
+        else if (searchLower === "limousine") mappedCategory = "Limousine";
+    }
+
+    let selectedCategory = mappedCategory;
     let selectedSort = "default";
 
     // TOGGLE DROPDOWNS
@@ -38,10 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 onSelect(value, text);
             });
         });
+
+        const currentTargetValue = dropdown === categoryDropdown ? selectedCategory : selectedSort;
+        
+        dropdown.querySelectorAll(".dropdown-option").forEach(opt => opt.classList.remove("active"));
+
+        const preSelectedOption = options.querySelector(`.dropdown-option[data-value="${dropdown === categoryDropdown ? selectedCategory : selectedSort}"]`);
+        if (preSelectedOption) {
+            preSelectedOption.classList.add("active");
+            dropdown.querySelector(".dropdown-selected span").textContent = preSelectedOption.textContent.trim();
+        }
     }
 
     setupDropdown(categoryDropdown, (value, text) => {
-        selectedCategory = value;
+        selectedCategory = value === "" ? "All" : value;
         categorySelected.textContent = text;
         filterAndSort();
     });
@@ -112,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCars(filtered);
     }
 
-    renderCars(window.cars);
+    filterAndSort();
 
     // close dropdown when clicking outside
     document.addEventListener("click", (e) => {

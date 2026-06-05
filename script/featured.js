@@ -619,3 +619,23 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownTrigger.classList.remove('open');
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBtn = document.getElementById('searchCarsBtn');
+    
+    if (searchBtn) {
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+
+            const pickupDate = document.getElementById('pickup-date')?.value || "";
+            const returnDate = document.getElementById('return-date')?.value || "";
+            const carCategory = document.getElementById('car-category-input')?.value || "";
+
+            localStorage.setItem('search_pickup', pickupDate);
+            localStorage.setItem('search_return', returnDate);
+            localStorage.setItem('search_category', carCategory);
+
+            window.location.href = "all-cars.html";
+        });
+    }
+});

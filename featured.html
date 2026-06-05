@@ -63,12 +63,12 @@
                     <input type="hidden" name="car_category" id="car-category-input" value="">
 
                     <ul class="custom-dropdown-list">
-                        <li data-value="">All Categories</li>
-                        <li data-value="sedan">Classic Car</li>
-                        <li data-value="suv">Luxury SUV</li>
-                        <li data-value="luxury">Luxury Van</li>
-                        <li data-value="sports">Sports Car</li>
-                        <li data-value="sports">Limousine</li>
+                        <li data-value=""><i class="fa-solid fa-car-side"></i> All Categories</li>
+                        <li data-value="sports"><i class="fa-solid fa-gauge-high"></i> Sports Cars</li>
+                        <li data-value="suv"><i class="fa-solid fa-car"></i> Luxury SUVs</li>
+                        <li data-value="van"><i class="fa-solid fa-van-shuttle"></i> Luxury Vans</li>
+                        <li data-value="limo"><i class="fa-solid fa-car-rear"></i> Limousines</li>
+                        <li data-value="sedan"><i class="fa-solid fa-truck-monster"></i> Classic Cars</li>
                     </ul>
                 </div>
             </div>
@@ -76,18 +76,18 @@
                 <div class="search-icon"><i class="fa-solid fa-calendar-days"></i></div>
                 <div class="search-info">
                     <label>Pick-up Date</label>
-                    <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" />
+                    <input type="date" id="pickup-date" class="dark-date-picker" />
                 </div>
             </div>
             <div class="search-section">
                 <div class="search-icon"><i class="fa-solid fa-clock"></i></div>
                 <div class="search-info">
                     <label>Return Date</label>
-                    <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" />
+                    <input type="date" id="return-date" class="dark-date-picker" />
                 </div>
             </div>
             <a href="all-cars.html">
-                <button class="search-btn">Search Cars</button>
+                <button class="search-btn" id="searchCarsBtn">Search Cars</button>
             </a>
         </div>
     </section>
@@ -285,5 +285,7 @@
     </footer>
 
     <script src="script/featured.js"></script>
+    <script src="script/all-cars.js"></script>
+    <script src="script/car-details.js"></script>
 </body>
 </html>

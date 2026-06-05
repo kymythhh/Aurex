@@ -195,3 +195,18 @@ galleryImages.forEach((image, index) => {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedPickup = localStorage.getItem('search_pickup');
+    const savedReturn = localStorage.getItem('search_return');
+
+    const bookingPickupInput = document.getElementById('bookingPickup');
+    const bookingReturnInput = document.getElementById('bookingReturn');
+
+    if (bookingPickupInput && savedPickup) {
+        bookingPickupInput.value = savedPickup;
+    }
+    if (bookingReturnInput && savedReturn) {
+        bookingReturnInput.value = savedReturn;
+    }
+});

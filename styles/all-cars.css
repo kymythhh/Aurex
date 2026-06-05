@@ -19,7 +19,6 @@ header {
     padding: 10px 5%;
     width: 100%;
     position: fixed;
-    margin-left: 2%;
     top: 0;
     left: 0;
     z-index: 90;
@@ -40,13 +39,6 @@ header {
     width: 60px;
     height: 60px;
     object-fit: cover;
-}
-
-.logo.hide-logo {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: 0.1s ease;
 }
 
 /* CONTENT */
@@ -216,29 +208,7 @@ h1 {
     .header {
         padding: 10px 20px;
     }
-    /* LOGO */
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 20px;
-        transition: opacity 0.1s ease;
-    }
 
-    .logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .logo span {
-        font-size: 28px;
-        font-weight: 700;
-    }
-
-    .logo.hide-logo {
-        opacity: 0;
-        pointer-events: none;
-    }
 
     /* HERO SECTION */
     .hero-header {
@@ -354,14 +324,6 @@ h1 {
 .dropdown-option.active {
     background: #111110;
     color: #E5A84B;
-}
-
-/* FIX LOGO HIDE */
-.logo.hide-logo {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: 0.1s ease;
 }
 
 
