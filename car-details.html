@@ -100,7 +100,9 @@
                                         <img id="cockpitImage" src="" class="img-fluid rounded-3" alt="Cockpit View">
                                     </div>
                                 </div>
-                                <div class="col-md-7 text-col">
+                                
+                                <!-- Added 'mt-auto' here to push this column lower -->
+                                <div class="col-md-7 text-col mt-auto">
                                     <div class="d-flex flex-column h-100 justify-content-between">
                                         <div class="row g-3" id="cockpitGrid"></div>
                                         <div class="feature-tag-container mt-3" id="cockpitPills"></div>
@@ -108,6 +110,7 @@
                                 </div>
                             </div>
                         </div>
+                       
 
                         <!-- 03 Aerodynamics Panel -->
                         <div class="premium-spec-card p-4 mb-4" id="card-aerodynamics">
@@ -136,12 +139,12 @@
                         <div class="premium-spec-card p-4 mb-4" id="card-chassis">
                             <div class="row g-4">
                                 <div class="col-md-5 img-col">
-                                    <div class="section-header">
-                                        <div class="section-badge">
-                                            <i class="fas fa-circle-notch"></i>
-                                        </div>
-                                        <span class="section-num">04</span>
-                                    </div>
+                        <div class="section-header">
+                            <div class="section-badge">
+                                <i class="fas fa-circle-notch"></i>
+                            </div>
+                            <span class="section-num">04</span>
+                        </div>
                                     <h4 class="text-white fw-bold id-title" id="chassisTitle">Chassis & Braking Dynamics</h4>
                                     <p class="text-muted small" id="chassisSubtitle"></p>
                                     <div class="mt-2 image-frame">
