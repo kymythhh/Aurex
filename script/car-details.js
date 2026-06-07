@@ -239,4 +239,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if (bookingReturnInput && savedReturn) {
         bookingReturnInput.value = savedReturn;
     }
+
+    const vehicleDetailsForm = document.getElementById('bookingForm'); //
+    if (vehicleDetailsForm) {
+        vehicleDetailsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Capture user values straight out of the form fields[cite: 2]
+            const pickupDateInput = document.getElementById('bookingPickup')?.value; //[cite: 2]
+            const returnDateInput = document.getElementById('bookingReturn')?.value; //[cite: 2]
+            
+            // Re-target collection terminal safely using its parent placeholder element[cite: 2]
+            const terminalInput = vehicleDetailsForm.querySelector('input[placeholder*="Collection Terminal"], input[placeholder*="Terminal 1"]').value; //[cite: 2]
+
+            // Push fresh tracking parameters down into storage structures[cite: 8]
+            localStorage.setItem('search_pickup', pickupDateInput); //[cite: 8]
+            localStorage.setItem('search_return', returnDateInput); //[cite: 8]
+            localStorage.setItem('preferred_terminal', terminalInput);
+
+            // Hand execution straight off to your new booking review page
+            window.location.href = "booking.html";
+        });
+    }
 });

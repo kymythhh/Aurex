@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Aurex Premium Car Rental - Modular Booking Review Style View Component
+   ========================================================================== */
+
+/* Blanket Force Visibility to Override your featured.css Preloader locks */
+header, .page-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* RECYCLING FEATURED PAGE CARD FORM LAYOUTS */
+.contact-form-card {
+    background: #1A1A1A; /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 20px; /*[cite: 5] */
+    padding: 40px; /*[cite: 5] */
+    backdrop-filter: blur(10px); /*[cite: 5] */
+}
+
+.form-input-group {
+    display: flex; /*[cite: 5] */
+    flex-direction: column; /*[cite: 5] */
+    gap: 8px; /*[cite: 5] */
+    margin-bottom: 20px; /*[cite: 5] */
+}
+
+.form-input-group label {
+    color: #B0B0B0; /*[cite: 5] */
+    font-size: 0.85rem; /*[cite: 5] */
+    text-transform: uppercase; /*[cite: 5] */
+    letter-spacing: 1px; /*[cite: 5] */
+}
+
+.form-input-group input {
+    background: rgba(0, 0, 0, 0.2); /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 8px; /*[cite: 5] */
+    padding: 12px 16px; /*[cite: 5] */
+    color: #ffffff; /*[cite: 5] */
+    font-family: inherit; /*[cite: 5] */
+    font-size: 0.95rem; /*[cite: 5] */
+    transition: border-color 0.3s ease; /*[cite: 5] */
+    width: 100%;
+}
+
+.form-input-group input:focus {
+    outline: none; /*[cite: 5] */
+    border-color: #CB973D; /*[cite: 5] */
+}
+
+.message-btn {
+    background-color: #E5A84B; /*[cite: 5] */
+    color: #000; /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    font-weight: 600; /*[cite: 5] */
+    border-radius: 8px; /*[cite: 5] */
+    cursor: pointer; /*[cite: 5] */
+    display: inline-flex; /*[cite: 5] */
+    align-items: center; /*[cite: 5] */
+    transition: all 0.3s ease; /*[cite: 5] */
+}
+
+.message-btn:hover {
+    background-color: #CB973D; /*[cite: 5] */
+    color: #05070a; /*[cite: 5] */
+    border-color: #CB973D; /*[cite: 5] */
+    box-shadow: 0 8px 20px #CB973D33; /*[cite: 5] */
+    transform: translateY(-2px); /*[cite: 5] */
+}
+
+/* CAR SUMMARY DETAILS PANEL */
+.section-tagline {
+    color: var(--gold-accent); /*[cite: 4] */
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+}
+
+.car-brand-sub {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim); /*[cite: 4] */
+    display: block;
+}
+
+.summary-image-frame {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.summary-image-frame img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.6));
+}
+
+.schedule-review-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* REVISION FIX: Forces matching light gray color with form titles */
+.schedule-review-box .text-muted,
+.cost-summary .text-muted {
+    color: #B0B0B0 !important; /*[cite: 5] */
+    font-weight: 500;
+    font-style: normal !important;
+}
+
+.value-text {
+    color: #ffffff;
+}
+
+.badge-duration {
+    background: rgba(229, 168, 75, 0.12);
+    color: var(--gold-accent); /*[cite: 4] */
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.style-total-row {
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Structural Adjustments */
+@media (max-width: 991px) {
+    .booking-sticky-sidebar {
+        position: static !important;
+        margin-top: 24px;
+    }
+    .summary-image-frame img {
+        height: 180px;
+    }
+}
+
+/* Ensure the text contrast color rule aligns perfectly */
+.schedule-review-box .text-muted,
+.cost-summary .text-muted {
+    color: #B0B0B0 !important;
+    font-weight: 500;
+    font-style: normal !important;
+}
+
+#reviewTerminal {
+    color: #ffffff;
+    font-weight: 600;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurex - Review Rental Booking</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/all-cars.css">
+    <link rel="stylesheet" href="styles/booking.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Aurex Logo">
+            <span>Aurex</span>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container py-4 mt-5">
+
+            <div class="mb-4">
+                <p class="breadcrumb mb-0">
+                    <span>
+                        <a href="featured.html">Home</a> › 
+                        <a href="all-cars.html">Cars</a> › 
+                        <a href="car-details.html">Details</a> › 
+                        <a class="active">Review Booking</a>
+                    </span>
+                </p>
+            </div>
+
+            <div class="row g-4 position-relative">
+                
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+                        <span class="section-tagline">Secure Gateway Step 1</span>
+                        <h2 style="color: #F5F5F5; font-size: 1.6rem; margin-bottom: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Renter Information Form
+                        </h2>
+
+                        <form id="renterForm">
+                            <div class="form-input-group">
+                                <label>Full Name</label>
+                                <input type="text" id="renterName" placeholder="Enter your name" required />
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-input-group">
+                                        <label>Email Address</label>
+                                        <input type="email" id="renterEmail" placeholder="Enter your email" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-input-group">
+                                        <label>Mobile Number</label>
+                                        <input type="tel" id="renterPhone" placeholder="+63 9XX XXX XXXX" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-input-group">
+                                <label>Driver's License Number</label>
+                                <input type="text" id="renterLicense" placeholder="Enter your license number (e.g., N01-XX-XXXXXX)" required />
+                            </div>
+
+                            <button type="submit" class="message-btn btn-white w-100 mt-3 justify-content-center" style="font-size: 14px; padding: 16px 30px;">
+                                Proceed to Payment Gateway <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="booking-sticky-sidebar">
+                        <div class="booking-card p-4 rounded-4 text-white">
+                            
+                            <span class="section-tagline" style="margin-bottom: 5px;">SELECTED CAR SUMMARY</span>
+                            <div class="car-header-block mb-3">
+                                <span class="car-brand-sub" id="summaryBrand">VEHICLE BRAND</span>
+                                <h3 class="fw-bold mb-2 text-white" id="summaryName">Loading Selection...</h3>
+                            </div>
+
+                            <div class="summary-image-frame mb-4">
+                                <img id="summaryCarImg" src="" alt="Selected Vehicle Graphic" class="img-fluid rounded-3">
+                            </div>
+
+                            <h4 class="text-white mb-3 fw-bold" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Schedule Specifications
+                            </h4>
+
+                            <div class="schedule-review-box p-3 rounded-3 mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted small">Pick-Up Date</span>
+                                    <span class="fw-semibold value-text" id="reviewPickupDate">—</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted small">Return Date</span>
+                                    <span class="fw-semibold value-text" id="reviewReturnDate">—</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted small">Rental Duration</span>
+                                    <span class="badge-duration" id="reviewDuration">0 Days</span>
+                                </div>
+                                <hr style="border-color: rgba(255,255,255,0.08); margin: 12px 0;">
+                                
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-muted small"><i class="fas fa-map-marker-alt text-danger me-1"></i>Collection Terminal</span>
+                                    <span class="fw-semibold value-text" id="reviewTerminal">—</span>
+                                </div>
+                            </div>
+
+                            <h4 class="text-white mb-3 fw-bold" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Pricing Breakdown
+                            </h4>
+                            <div class="cost-summary mb-2">
+                                <div class="d-flex justify-content-between mb-2 small">
+                                    <span class="text-muted">Daily Valuation Baseline</span>
+                                    <span id="reviewPricePerDay">$0 / day</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 small">
+                                    <span class="text-muted">Premium Operational Insurance</span>
+                                    <span class="text-success">INCLUDED</span>
+                                </div>
+                                <div class="d-flex justify-content-between mt-3 pt-3 style-total-row">
+                                    <span class="fw-bold">ESTIMATED TOTAL DUE</span>
+                                    <span class="fw-bold" id="reviewTotalCost" style="color: var(--gold-accent); font-size: 22px;">$0</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script/cars.js"></script>
+    <script src="script/booking.js"></script>
+</body>
+</html>

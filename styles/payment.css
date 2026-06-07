@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Aurex Premium Car Rental - Modular Payment Gateway Style View Component
+   ========================================================================== */
+
+header, .page-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* RECYCLING FEATURED PAGE CARD FORM LAYOUTS */
+.contact-form-card {
+    background: #1A1A1A; /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 20px; /*[cite: 5] */
+    padding: 40px; /*[cite: 5] */
+    backdrop-filter: blur(10px); /*[cite: 5] */
+}
+
+.form-input-group {
+    display: flex; /*[cite: 5] */
+    flex-direction: column; /*[cite: 5] */
+    gap: 8px; /*[cite: 5] */
+    margin-bottom: 20px; /*[cite: 5] */
+}
+
+.form-input-group label {
+    color: #B0B0B0; /*[cite: 5] */
+    font-size: 0.85rem; /*[cite: 5] */
+    text-transform: uppercase; /*[cite: 5] */
+    letter-spacing: 1px; /*[cite: 5] */
+}
+
+.form-input-group input {
+    background: rgba(0, 0, 0, 0.2); /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 8px; /*[cite: 5] */
+    padding: 12px 16px; /*[cite: 5] */
+    color: #ffffff; /*[cite: 5] */
+    font-family: inherit; /*[cite: 5] */
+    font-size: 0.95rem; /*[cite: 5] */
+    transition: border-color 0.3s ease; /*[cite: 5] */
+    width: 100%;
+}
+
+.form-input-group input:focus {
+    outline: none; /*[cite: 5] */
+    border-color: #CB973D; /*[cite: 5] */
+}
+
+.message-btn {
+    background-color: #E5A84B; /*[cite: 5] */
+    color: #000; /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    font-weight: 600; /*[cite: 5] */
+    border-radius: 8px; /*[cite: 5] */
+    cursor: pointer; /*[cite: 5] */
+    display: inline-flex; /*[cite: 5] */
+    align-items: center; /*[cite: 5] */
+    transition: all 0.3s ease; /*[cite: 5] */
+}
+
+.message-btn:hover {
+    background-color: #CB973D; /*[cite: 5] */
+    color: #05070a; /*[cite: 5] */
+    border-color: #CB973D; /*[cite: 5] */
+    box-shadow: 0 8px 20px #CB973D33; /*[cite: 5] */
+    transform: translateY(-2px); /*[cite: 5] */
+}
+
+.section-tagline {
+    color: var(--gold-accent);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+}
+
+.car-brand-sub {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    display: block;
+}
+
+/* CUSTOM MODAL STRATEGY SELECTOR BLOCKS */
+.payment-method-selectors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.gateway-option-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #B0B0B0; /*[cite: 5] */
+}
+
+.gateway-option-card i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #E5A84B; /*[cite: 5] */
+    display: block;
+}
+
+.gateway-option-card:hover {
+    border-color: rgba(229, 168, 75, 0.4);
+}
+
+.gateway-option-card.active {
+    border-color: #E5A84B; /*[cite: 5] */
+    background: rgba(229, 168, 75, 0.05);
+    color: #fff;
+}
+
+/* HIGH-CONTRAST VERIFIED SUMMARY SPECIFICATIONS */
+.manifest-data-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.manifest-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.manifest-detail-row span:first-child,
+.terminal-label {
+    color: #B0B0B0 !important; /*[cite: 5] */
+    font-weight: 500;
+}
+
+.manifest-detail-row span:last-child {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: right;
+}
+
+.badge-duration {
+    background: rgba(229, 168, 75, 0.12);
+    color: var(--gold-accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* GATEWAY TRANSITION SUCCESS LAYERS MODAL OVERLAYS */
+.success-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(11, 11, 11, 0.98);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-modal-card {
+    background: #1A1A1A; /*[cite: 5] */
+    border: 1px solid #3C4144; /*[cite: 5] */
+    border-radius: 24px;
+    padding: 45px 35px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-overlay.active .success-modal-card {
+    transform: scale(1);
+}
+
+.success-check-circle {
+    width: 74px;
+    height: 74px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+}
+
+.success-title {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.booking-receipt-badge {
+    color: var(--gold-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.success-paragraph-text {
+    color: #B0B0B0; /*[cite: 5] */
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.receipt-summary-block {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* REVISION FIX: Forces perfect high contrast color match for receipt block items */
+.receipt-summary-block .text-muted {
+    color: #B0B0B0 !important; /*[cite: 5] */
+    font-weight: 500;
+    font-style: normal !important;
+}
+
+/* Responsive Sticky Layout Adjustment */
+@media (max-width: 991px) {
+    .payment-sticky-sidebar {
+        position: static !important;
+        margin-top: 24px;
+    }
+}
