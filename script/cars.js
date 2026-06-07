@@ -317,7 +317,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Predictive Logic Rear-Steer Posture & Anchors",
-            image: "assets/Sports Cars/2023 Lamborghini Huracán Tecnica/brakes.jpg",
+            image: "assets/Sports Cars/2023 Lamborghini Huracán Tecnica/side.jpg",
 
             frontCalipers: "Brembo 6-Piston Aluminum Monobloc Calipers",
             rearCalipers: "Brembo 4-Piston Aluminum Monobloc Calipers",
@@ -399,7 +399,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "RaceActive Hydraulic Stiffening & F1-Grade Anchors",
-            image: "assets/Sports Cars/2014 McLaren P1/brakes.jpg",
+            image: "assets/Sports Cars/2014 McLaren P1/Side.jpg",
 
             frontCalipers: "Akebono F1-Grade Monobloc 6-Piston Calipers",
             rearCalipers: "Akebono F1-Grade Monobloc 4-Piston Calipers",
@@ -452,7 +452,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Chauffeur-Driven High-Definition Media Suite",
-            image: "assets/Luxury SUVs/2024 Range Rover SV/Interior.jpg",
+            image: "assets/Luxury SUV/2024 Range Rover SV/interior.jpg",
 
             clusterScreen: "13.7-inch Interactive Driver Display",
             centerDisplay: "13.1-inch Curved Floating Pivi Pro Touchscreen",
@@ -468,7 +468,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Integrated Low-Drag Silhouette & Wade Sensors",
-            image: "assets/Luxury SUVs/2024 Range Rover SV/Rear.jpg",
+            image: "assets/Luxury SUV/2024 Range Rover SV/rear.jpg",
 
             rearSpoiler: "Integrated Flush Upper Trailing Edge Wing",
             frontSplitter: "Smooth Lower Air Dam with Active Grille Shutters",
@@ -482,7 +482,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Active Roll Stabilization & Cornering Braking Control",
-            image: "assets/Luxury SUVs/2024 Range Rover SV/brakes.jpg",
+            image: "assets/Luxury SUV/2024 Range Rover SV/brakes.jpg",
 
             frontCalipers: "Brembo 6-Piston Heavy-Duty Calipers",
             rearCalipers: "Brembo 4-Piston Floating Calipers",
@@ -534,7 +534,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Glass-Enclosed Bespoke Art Gallery & Digital Hub",
-            image: "assets/Luxury SUVs/2025 Rolls-Royce Cullinan Series II/Interior.jpg",
+            image: "assets/Luxury SUV/2025 Rolls-Royce Cullinan Series II/interior.jpg",
 
             clusterScreen: "Advanced SPIRIT Operating System with Custom Color Dials",
             centerDisplay: "12.3-inch High-Definition Wide-Screen Touch Interface",
@@ -550,7 +550,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Yacht-Bow Front Profiling & Illumination",
-            image: "assets/Luxury SUVs/2025 Rolls-Royce Cullinan Series II/Rear.jpg",
+            image: "assets/Luxury SUV/2025 Rolls-Royce Cullinan Series II/rear.jpg",
 
             rearSpoiler: "Discrete, Sculpted Roof Edge Lip",
             frontSplitter: "Reimagined Yacht-Bow V-Shape Front Air Bumper",
@@ -564,7 +564,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Magic Carpet Ride Planar Air Suspension",
-            image: "assets/Luxury SUVs/2025 Rolls-Royce Cullinan Series II/brakes.jpg",
+            image: "assets/Luxury SUV/2025 Rolls-Royce Cullinan Series II/side.jpg",
 
             frontCalipers: "Heavy-Duty Multi-Piston Fixed Calipers",
             rearCalipers: "Single-Piston Sliding Floating Calipers",
@@ -617,7 +617,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "First-Class Dual MBUX Acoustic Sanctuary",
-            image: "assets/Luxury SUVs/2024 Mercedes-Maybach GLS 600/Interior.jpg",
+            image: "assets/Luxury SUV/Mercedes-Benz GLS 600 Maybach/interior.jpg",
 
             clusterScreen: "12.3-inch Digital Instrument Panel",
             centerDisplay: "12.3-inch MBUX Touchscreen Infotainment Display",
@@ -633,7 +633,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Acoustic Noise-Isolation Shell & Motorized Steps",
-            image: "assets/Luxury SUVs/2024 Mercedes-Maybach GLS 600/Rear.jpg",
+            image: "assets/Luxury SUV/Mercedes-Benz GLS 600 Maybach/rear.jpg",
 
             rearSpoiler: "Extended Aerodynamic Roof Line Spoiler",
             frontSplitter: "Upright Chrome Slatted Grille with Mesh Bumper Intake Deflectors",
@@ -647,7 +647,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Fully Adaptive Camera-Linked E-Active Suspension",
-            image: "assets/Luxury SUVs/2024 Mercedes-Maybach GLS 600/brakes.jpg",
+            image: "assets/Luxury SUV/Mercedes-Benz GLS 600 Maybach/side.jpg",
 
             frontCalipers: "6-Piston Fixed Brake Calipers",
             rearCalipers: "Single-Piston Floating Calipers",
@@ -697,7 +697,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Track-Oriented Tamburo Driving Architecture",
-            image: "assets/Luxury SUVs/2024 Lamborghini Urus Performante/Interior.jpg",
+            image: "assets/Luxury SUV/2024 Lamborghini Urus Performante/interior.jpg",
 
             clusterScreen: "Lamborghini Virtual Cockpit with Performante-Exclusive Graphics",
             centerDisplay: "Dual-Screen Central Interface Layout (10.1\" Primary, 8.6\" Lower HVAC)",
@@ -713,7 +713,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Carbon-Fiber Air Curtains & 360-Degree Lightness",
-            image: "assets/Luxury SUVs/2024 Lamborghini Urus Performante/Rear.jpg",
+            image: "assets/Luxury SUV/2024 Lamborghini Urus Performante/rear.jpg",
 
             rearSpoiler: "Carbon Fiber Roof Spoiler with Aero Fin Extensions",
             frontSplitter: "Aggressive Carbon Fiber Front Apron and Air Curtains",
@@ -727,7 +727,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Massive 10-Piston Anchors & Active Roll Stabilization",
-            image: "assets/Luxury SUVs/2024 Lamborghini Urus Performante/brakes.jpg",
+            image: "assets/Luxury SUV/2024 Lamborghini Urus Performante/side.jpg",
 
             frontCalipers: "10-Piston Massive Aluminum Fixed Monobloc Calipers",
             rearCalipers: "Single-Piston Floating Calipers",
@@ -777,7 +777,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "38-Inch Curved OLED Array & AKG Sound Matrix",
-            image: "assets/Luxury SUVs/2024 Cadillac Escalade-V/Interior.jpg",
+            image: "assets/Luxury SUV/2024 Cadillac Escalade-V/interior.jpg",
 
             clusterScreen: "14.2-inch Diagonal Segment of the Curved OLED Array",
             centerDisplay: "16.9-inch Infotainment Screen",
@@ -793,7 +793,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Sport Mesh Venting & Trailing Edge Aero Deflector",
-            image: "assets/Luxury SUVs/2024 Cadillac Escalade-V/Rear.jpg",
+            image: "assets/Luxury SUV/2024 Cadillac Escalade-V/side&rear.jpg",
 
             rearSpoiler: "Functional Roof-Line Trailing Edge Air Deflector",
             frontSplitter: "Exclusive Sport Mesh V-Series Grille with Lower Aero Dam",
@@ -807,7 +807,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Magnetic Ride Control & High-Thermal Braking Matrix",
-            image: "assets/Luxury SUVs/2024 Cadillac Escalade-V/brakes.jpg",
+            image: "assets/Luxury SUV/2024 Cadillac Escalade-V/dront.jpg",
 
             frontCalipers: "Brembo Performance 6-Piston Edge-Red Calipers",
             rearCalipers: "Heavy Duty Single-Piston Electronic Calipers",
@@ -833,9 +833,9 @@ window.cars = [
         image: "assets/allcars/lexusLM.jpg",
 
         gallery: [
-            "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/brakes.jpg",
-            "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/brakes2.jpg",
             "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/front.jpg",
+            "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/brakes2.jpg",
+            "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/brakes.jpg",
             "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/interior.jpg",
             "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/rear.jpg",
             "assets/Luxury Vans/2024 Lexus LM (350h Ultra Luxury)/side.jpg",
@@ -914,13 +914,13 @@ window.cars = [
         brand: "Toyota",
         price: 699,
         rating: 4.8,
-        image: "assets/allcars/Toyotaalphard.jpg",
+        image: "assets/Luxury Vans/2024 Toyota Alphard/front.jpeg",
 
         gallery: [
-            "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/front.jpg",
-            "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/interior.jpg",
-            "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/rear.jpg",
-            "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/side.jpg",
+            "assets/Luxury Vans/2024 Toyota Alphard/front.jpeg",
+            "assets/Luxury Vans/2024 Toyota Alphard/interior.jpeg",
+            "assets/Luxury Vans/2024 Toyota Alphard/rear.jpeg",
+            "assets/Luxury Vans/2024 Toyota Alphard/side.jpeg",
         ],
 
         specifications: {
@@ -942,7 +942,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "First-Class Connected Executive Hub",
-            image: "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/Interior.jpg",
+            image: "assets/Luxury Vans/2024 Toyota Alphard/interior.jpeg",
 
             clusterScreen: "12.3-inch TFT Customizable Infotainment Digital Cluster",
             centerDisplay: "14-inch Primary HD Touchscreen Display",
@@ -958,7 +958,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Sovereign Road Presence Shielding",
-            image: "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/Rear.jpg",
+            image: "assets/Luxury Vans/2024 Toyota Alphard/rear.jpeg",
 
             rearSpoiler: "Aerodynamic Flush-Mount Rear Roof Spoiler",
             frontSplitter: "Imposing Chrome Slatted Executive Grille with integrated air curtains",
@@ -972,7 +972,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Frequency-Sensitive Vibration Dampening",
-            image: "assets/Luxury Vans/2024 Toyota Alphard Executive Lounge/brakes.jpg",
+            image: "assets/Luxury Vans/2024 Toyota Alphard/Side.jpeg",
 
             frontCalipers: "High-Capacity Ventilated Disc Brake Calipers",
             rearCalipers: "Single-Piston Electronic Parking Brake Integrated Calipers",
@@ -1039,7 +1039,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Avantgarde Styling & Guarded Privacy",
-            image: "assets/Luxury Vans/2024 Mercedes-Benz V-Class/Rear.jpg",
+            image: "assets/Luxury Vans/2024 Mercedes-Benz V-Class/rear side.jpg",
 
             rearSpoiler: "Integrated Aerodynamic Tailgate Edge Performance Trailing Lip",
             frontSplitter: "Avantgarde Chrome Dual-Louvre Radiator Grille",
@@ -1053,7 +1053,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Agility Control Selective Mechanical Damping",
-            image: "assets/Luxury Vans/2024 Mercedes-Benz V-Class/brakes.jpg",
+            image: "assets/Luxury Vans/2024 Mercedes-Benz V-Class/front side.jpg",
 
             frontCalipers: "Heavy-Duty Fixed Multi-Piston Performance Calipers",
             rearCalipers: "Single-Piston Electronic Parking Brake Floating Calipers",
@@ -1105,7 +1105,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Mobile Executive Boardroom Command Deck",
-            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter (CEO Edition)/Interior.jpg",
+            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter/interior.jpg",
 
             clusterScreen: "7.0-inch Driver Information Color Display Cluster",
             centerDisplay: "10.25-inch MBUX Touchscreen Unit / 43-inch 4K Smart LED TV Central Partition screen",
@@ -1121,7 +1121,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "High-Roof Wind-Deflecting Commercial Contour",
-            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter (CEO Edition)/Rear.jpg",
+            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter/rear.jpg",
 
             rearSpoiler: "High-Roof Aerodynamic Wind-Deflecting Trailing Trim",
             frontSplitter: "Clean Commercial Facia Bumper with High-Volume Air Inlets",
@@ -1135,7 +1135,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Heavy-Duty Air Levelling & Crosswind Tracking Assist",
-            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter (CEO Edition)/brakes.jpg",
+            image: "assets/Luxury Vans/2024 Mercedes-Benz Sprinter/side.jpg",
 
             frontCalipers: "Industrial-Grade Multi-Piston Fixed Calipers",
             rearCalipers: "Heavy-Duty Single-Piston Sliding Calipers",
@@ -1154,18 +1154,18 @@ window.cars = [
 
     {
         id: 15,
-        name: "2024 Hyundai Staria Lounge",
+        name: "2024 Hyundai Staria",
         category: "Luxury Van",
         brand: "Hyundai",
         price: 699,
         rating: 4.8,
-        image: "assets/allcars/hyundaistaria.jpg",
+        image: "assets/allcars/hyundaistaria copy.jpg",
 
         gallery: [
-            "assets/Limo/2024 Hyundai Staria /front.jpg",
-            "assets/Limo/2024 Hyundai Staria /interior.jpg",
-            "assets/Limo/2024 Hyundai Staria /rear.jpg",
-            "assets/Limo/2024 Hyundai Staria /side.jpg"
+            "assets/Luxury Vans/2024 Hyundai Staria/front.jpg",
+            "assets/Luxury Vans/2024 Hyundai Staria/interior.jpg",
+            "assets/Luxury Vans/2024 Hyundai Staria/rear.jpg",
+            "assets/Luxury Vans/2024 Hyundai Staria/side.jpg"
         ],
 
          specifications: {
@@ -1187,7 +1187,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Futuristic Panoramic Glass-Roof Lounge Matrix",
-            image: "assets/Limo/2024 Hyundai Staria Lounge / Limousine/Interior.jpg",
+            image: "assets/Luxury Vans/2024 Hyundai Staria/interior.jpg",
 
             clusterScreen: "10.25-inch High-Definition Floating Driver Digital Cluster",
             centerDisplay: "10.25-inch Primary Navigation Smart Screen Terminal",
@@ -1203,8 +1203,8 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Seamless Parametric Pixel Aerodynamics",
-            image: "assets/Limo/2024 Hyundai Staria Lounge / Limousine/Rear.jpg",
-
+            image: "assets/Luxury Vans/2024 Hyundai Staria/rear.jpg",
+            
             rearSpoiler: "Aerodynamic Rear Wing Plate with Hidden Wiper Module",
             frontSplitter: "Low-Slung Futuristic Front Bumper Profile with Full-Width Horizontal DRL",
             underbody: "Full Aerodynamic Under-Body Shield Panels",
@@ -1217,7 +1217,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Multi-Link Rear Posture Comfort & Isolation",
-            image: "assets/Limo/2024 Hyundai Staria Lounge / Limousine/brakes.jpg",
+            image: "assets/Luxury Vans/2024 Hyundai Staria/side.jpg",
 
             frontCalipers: "Multi-Piston Floating Disc Calipers",
             rearCalipers: "Integrated Electronic Parking Brake Calipers",
@@ -1325,10 +1325,10 @@ window.cars = [
         image: "assets/allcars/mercedesSclass.jpg",
 
         gallery: [
-            "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/front.jpg",
-            "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/interior.jpg",
-            "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/rear.jpg",
-            "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/side.jpg",
+            "assets/Limo/2024 Mercedes-Maybach S-Class/front.jpg",
+            "assets/Limo/2024 Mercedes-Maybach S-Class/interior.jpg",
+            "assets/Limo/2024 Mercedes-Maybach S-Class/rear.jpg",
+            "assets/Limo/2024 Mercedes-Maybach S-Class/side.jpg",
         ],
 
             specifications: {
@@ -1350,7 +1350,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Second-Generation MBUX 4D Surround Command Center",
-            image: "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/Interior.jpg",
+            image: "assets/Limo/2024 Mercedes-Maybach S-Class/interior.jpg",
 
             clusterScreen: "12.3-inch 3D Digital Instrument Cluster with Eyetracking",
             centerDisplay: "12.8-inch OLED Central Touchscreen Multimedia Console",
@@ -1366,7 +1366,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Seamless Motorized Flush Geometry & Low Drag",
-            image: "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/Rear.jpg",
+            image: "assets/Limo/2024 Mercedes-Maybach S-Class/rear.jpg",
 
             rearSpoiler: "Sleek Rear Trunk Lid Tail Edge Optimization",
             frontSplitter: "Chrome-Slatted Maybach Lower Bumper Inlets",
@@ -1380,7 +1380,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Intelligent Active Suspenion & 10-Degree Rear-Axle Steering",
-            image: "assets/Limo/2024 Mercedes-Maybach S-Class (S 680)/brakes.jpg",
+            image: "assets/Limo/2024 Mercedes-Maybach S-Class/side.jpg",
 
             frontCalipers: "AMG High-Performance 6-Piston Fixed Calipers",
             rearCalipers: "Single-Piston Electronic Floating Calipers",
@@ -1446,7 +1446,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Double-Diamond Brightware & Retractable Flying \"B\"",
-            image: "assets/Limo/2025 Bentley Flying Spur Mulliner/Rear.jpg",
+            image: "assets/Limo/2025 Bentley Flying Spur Mulliner/side rear.jpg",
 
             rearSpoiler: "Automated Tail-Integrated High-Speed Flush Deploy Lift Wing",
             frontSplitter: "Mulliner Signature Double-Diamond Front Grille with Lower Brightware Air Dams",
@@ -1460,7 +1460,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "48V Active Roll Stabilization & Massive 10-Piston Brembos",
-            image: "assets/Limo/2025 Bentley Flying Spur Mulliner/brakes.jpg",
+            image: "assets/Limo/2025 Bentley Flying Spur Mulliner/side front.jpg",
 
             frontCalipers: "10-Piston Massive Aluminum Fixed Brembo Calipers",
             rearCalipers: "4-Piston Fixed Aluminum Stop Brembo Calipers",
@@ -1526,7 +1526,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Full Carbon-Fiber Body Panels & Black Crystal Shutter Grille",
-            image: "assets/Limo/2025 Cadillac Celestiq/Rear.jpg",
+            image: "assets/Limo/2025 Cadillac Celestiq/interior 2.jpg",
 
             rearSpoiler: "Active Rear Deck Lid Aero Drag Adjuster Wing",
             frontSplitter: "Black Crystal Shield Grille with Active Aerodynamic Aero Shutter Flaps",
@@ -1540,7 +1540,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Adaptive Air Ride Suspension & 1,000 Hz Magnetic Damping",
-            image: "assets/Limo/2025 Cadillac Celestiq/brakes.jpg",
+            image: "assets/Limo/2025 Cadillac Celestiq/rear side.jpg",
 
             frontCalipers: "High-Performance Performance Multi-Piston Fixed Calipers",
             rearCalipers: "Integrated Single-Piston Electronic Parking Brake Units",
@@ -1621,7 +1621,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Continuously Controlled Damping Anti-Float Shock Arrays",
-            image: "assets/Limo/2020 Lincoln Continental Coach Door Edition/brakes.jpg",
+            image: "assets/Limo/2020 Lincoln Continental Coach Door Edition/side.jpg",
 
             frontCalipers: "Dual-Piston Floating Calipers",
             rearCalipers: "Single-Piston Electronic Slide Calipers",
@@ -1646,12 +1646,12 @@ window.cars = [
         image: "assets/allcars/DodgechargerR_T.jpg",
 
         gallery: [
-            "assets/Classic Car/1969 Dodge Charger R/T/front.jpg",
-            "assets/Classic Car/1969 Dodge Charger R/T/interior.jpg",
-            "assets/Classic Car/1969 Dodge Charger R/T/rear.jpg",
-            "assets/Classic Car/1969 Dodge Charger R/T/side.jpg",
-            "assets/Classic Car/1969 Dodge Charger R/T/brakes.jpg",
-            "assets/Classic Car/1969 Dodge Charger R/T/brakes2.jpg"
+            "assets/Classic Car/1969 Dodge Charger RT/front.jpg",
+            "assets/Classic Car/1969 Dodge Charger RT/interior.jpg",
+            "assets/Classic Car/1969 Dodge Charger RT/rear.jpg",
+            "assets/Classic Car/1969 Dodge Charger RT/side.jpg",
+            "assets/Classic Car/1969 Dodge Charger RT/brakes.jpg",
+            "assets/Classic Car/1969 Dodge Charger RT/brakes2.jpg"
         ],
 
         specifications: {
@@ -1673,7 +1673,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Analog Gauge Command & Concealed RetroMod Bluetooth",
-            image: "assets/Classics/1969 Dodge Charger R/T/Interior.jpg",
+            image: "assets/Classic Car/1969 Dodge Charger RT/interior.jpg",
 
             clusterScreen: "Classic 150 MPH Mechanical Speedometer and Tic-Toc-Tach Combo",
             centerDisplay: "Retro-Styled AM/FM Transistor Radio Interface",
@@ -1688,7 +1688,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Raw Wind-Profile Scalloped Styling",
-            image: "assets/Classics/1969 Dodge Charger R/T/Rear.jpg",
+            image: "assets/Classic Car/1969 Dodge Charger RT/rear.jpg",
 
             rearSpoiler: "Flush Integrated Tail-Panel Lip",
             frontSplitter: "Deep-Set Under-Bumper Steel Air Deflector",
@@ -1702,7 +1702,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Pure Driver-Modulated Heavy Steel Dynamics",
-            image: "assets/Classics/1969 Dodge Charger R/T/brakes.jpg",
+            image: "assets/Classic Car/1969 Dodge Charger RT/side.jpg",
 
             frontCalipers: "Kelsey-Hayes Single-Piston Heavy-Duty Calipers (Disc Conversion)",
             rearCalipers: "Self-Adjusting Mechanical Hydraulic Duo-Servo Drums",
@@ -1752,7 +1752,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Wedge-Profile Jaeger Italia Instrumentation & Alpine Cassette Deck",
-            image: "assets/Classics/1985 Lamborghini Countach LP5000 QV/Interior.jpg",
+            image: "assets/Classic Car/1985 Lamborghini Countach/interior.jpg",
 
             clusterScreen: "Analog Dashboard Gauge Pod cluster by Jaeger Italia",
             centerDisplay: "Missing (Pure Era-Correct Dashboard Architecture)",
@@ -1768,7 +1768,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Iconic Boxy NACA Intake Wedge Aero",
-            image: "assets/Classics/1985 Lamborghini Countach LP5000 QV/Rear.jpg",
+            image: "assets/Classic Car/1985 Lamborghini Countach/rear.jpg",
 
             rearSpoiler: "Massive Optional Wedge V-Shaped Rear Wing",
             frontSplitter: "Low Flat Wedge Fiberglass Chin Spoiler",
@@ -1782,7 +1782,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Unfiltered Raw Double-Wishbone Racing Footwork",
-            image: "assets/Classics/1985 Lamborghini Countach LP5000 QV/brakes.jpg",
+            image: "assets/Classic Car/1985 Lamborghini Countach/front side.jpg",
 
             frontCalipers: "ATE Dual-Piston High-Performance Fixed Calipers",
             rearCalipers: "ATE Dual-Piston Fixed Calipers",
@@ -1832,7 +1832,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Smiths Circular Analog Dial Architecture & Motorola Radio",
-            image: "assets/Classics/1965 Aston Martin DB5/Interior.jpg",
+            image:  "assets/Classic Car/1965 Aston Martin DB5/interior.jpg",
 
             clusterScreen: "Smiths British Mechanical Circular Analog Gauge Instrument Set",
             centerDisplay: "Vintage Analogue Chrome Inset Dashboard Clock Core",
@@ -1848,7 +1848,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Patented Superleggera Lightweight Tube Framework",
-            image: "assets/Classics/1965 Aston Martin DB5/Rear.jpg",
+            image: "assets/Classic Car/1965 Aston Martin DB5/rear side.jpg",
 
             rearSpoiler: "None (Elegant Tapered Fastback Rear End Design)",
             frontSplitter: "Rounded Chrome Front Bumper with Minimal Lower Valance Incline",
@@ -1862,7 +1862,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Dunlop Solid Hydraulic Stopping Discs & Vintage Overdrive",
-            image: "assets/Classics/1965 Aston Martin DB5/brakes.jpg",
+            image: "assets/Classic Car/1965 Aston Martin DB5/top side.jpg",
 
             frontCalipers: "Dunlop Solid Three-Piston Hydraulic Disc Calipers",
             rearCalipers: "Dunlop Two-Piston Disc Calipers",
@@ -1912,7 +1912,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Minimalist Roadster Layout & Integrated Seating Headrest Speakers",
-            image: "assets/Classics/1990 Mazda MX-5 Miata (NA)/Interior.jpg",
+            image: "assets/Classic Car/1990 Mazda MX-5 Miata (NA)/interior.jpg",
 
             clusterScreen: "Simple Analog White-on-Black Gauge Dials with Mechanical Odometer",
             centerDisplay: "Double-DIN Head-Unit Bay",
@@ -1928,7 +1928,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Retractable Pop-Up Headlights & Polyurethane Aero Lip",
-            image: "assets/Classics/1990 Mazda MX-5 Miata (NA)/Rear.jpg",
+            image: "assets/Classic Car/1990 Mazda MX-5 Miata (NA)/rear.jpg",
 
             rearSpoiler: "None (Smooth Rounded Trunk Deck Finish)",
             frontSplitter: "Subtle Polyurethane Lower Bumper Air Lip",
@@ -1942,7 +1942,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Legendary 4-Wheel Double-Wishbone Balance",
-            image: "assets/Classics/1990 Mazda MX-5 Miata (NA)/brakes.jpg",
+            image: "assets/Classic Car/1990 Mazda MX-5 Miata (NA)/rear side.jpg",
 
             frontCalipers: "Single-Piston Sliding Brake Calipers",
             rearCalipers: "Single-Piston Sliding Braking Calipers",
@@ -1970,7 +1970,7 @@ window.cars = [
             "assets/Classic Car/1984 Ferrari Testarossa/front.jpg",
             "assets/Classic Car/1984 Ferrari Testarossa/interior.jpg",
             "assets/Classic Car/1984 Ferrari Testarossa/rear.jpg",
-            "assets/Classic Car/1984 Ferrari Testarossa/rear side.jpg",
+            "assets/Classic Car/1984 Ferrari Testarossa/side.jpg",
         ],  
 
         specifications: {
@@ -1992,7 +1992,7 @@ window.cars = [
         cockpit: {
             title: "Cockpit & Infotainment",
             subtitle: "Veglia Borletti Mechanical Instruments & Integrated Cassette Storage",
-            image: "assets/Classics/1984 Ferrari Testarossa/Interior.jpg",
+            image: "assets/Classic Car/1984 Ferrari Testarossa/interior.jpg",
 
             clusterScreen: "Veglia Borletti Bright Orange-on-Black Mechanical Gauges",
             centerDisplay: "Core Dashboard Inset Analogue Climate Gauges",
@@ -2008,7 +2008,7 @@ window.cars = [
         aerodynamics: {
             title: "Aerodynamics & Body Management",
             subtitle: "Deep Side Door Strakes & Wide-Deck Leveling",
-            image: "assets/Classics/1984 Ferrari Testarossa/Rear.jpg",
+            image: "assets/Classic Car/1984 Ferrari Testarossa/rear.jpg",
 
             rearSpoiler: "Integrated Rear Wide-Deck Drag Leveling Surface",
             frontSplitter: "Low Black Polymer Front Spoiler Extension",
@@ -2022,7 +2022,7 @@ window.cars = [
         chassis: {
             title: "Chassis & Braking Dynamics",
             subtitle: "Pure Unfiltered Italian Analog Tour De Force",
-            image: "assets/Classics/1984 Ferrari Testarossa/brakes.jpg",
+            image: "assets/Classic Car/1984 Ferrari Testarossa/side.jpg",
 
             frontCalipers: "High-Performance Performance Dual-Piston Fixed Calipers",
             rearCalipers: "High-Performance Performance Dual-Piston Fixed Calipers",

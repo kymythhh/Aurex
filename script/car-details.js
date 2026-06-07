@@ -151,6 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderPremiumPanel(sectionObj, listId, pillsId = null) {
         const gridContainer = document.getElementById(listId);
         if(!gridContainer) return;
+        
+        // 1. Add the new class to the container
+        gridContainer.classList.add("specs-grid-container");
         gridContainer.innerHTML = "";
 
         let rowsHtml = "";
@@ -158,14 +161,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         Object.keys(sectionObj).forEach(key => {
             if (key !== 'title' && key !== 'subtitle' && key !== 'image' && key !== 'features' && key !== 'performanceModes') {
+                // 2. Use the new class structure: spec-item-box
                 rowsHtml += `
-                    <div class="col-sm-6">
-                        <div class="spec-item-row">
-                            <div class="spec-icon-wrapper"><i class="${getDynamicIconClass(key)}"></i></div>
-                            <div class="spec-meta-block">
-                                <div class="spec-meta-label">${formatLabel(key)}</div>
-                                <div class="spec-meta-value">${sectionObj[key]}</div>
-                            </div>
+                    <div class="spec-item-box">
+                        <div class="spec-icon-wrapper">
+                            <i class="${getDynamicIconClass(key)}"></i>
+                        </div>
+                        <div class="spec-meta-block">
+                            <div class="spec-meta-label">${formatLabel(key)}</div>
+                            <div class="spec-meta-value">${sectionObj[key]}</div>
                         </div>
                     </div>
                 `;
@@ -173,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         gridContainer.innerHTML = rowsHtml;
 
+        // Pills logic remains the same
         if (pillsId) {
             const pillsContainer = document.getElementById(pillsId);
             if(pillsContainer) {
