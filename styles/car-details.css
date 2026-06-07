@@ -446,3 +446,7 @@ h1, h2, h3, .car-main-title, .id-title {
   .rating-badge { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04); }
   .gallery-wrapper { animation: fadeUp 0.8s ease; }
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(40%) saturate(600%) hue-rotate(3deg);
+}
