@@ -431,55 +431,69 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add('loading-active');
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+document.addEventListener("DOMContentLoaded", async () => {
+    const preloaderEl = document.getElementById('site-preloader');
     const loaderNumEl = document.getElementById('loader-number');
     const loaderBarFill = document.getElementById('loader-bar-fill');
-    const preloaderEl = document.getElementById('site-preloader');
-
     const counterContainer = document.querySelector('.loader-counter');
+    const hasVisited = sessionStorage.getItem('preloader-shown');
+
+    if (hasVisited === 'true') {
+        if (preloaderEl) {
+            preloaderEl.style.display = 'none'; 
+            preloaderEl.style.opacity = '0';
+            preloaderEl.style.visibility = 'hidden';
+        }
+        document.body.classList.add('loading-complete');
+
+        runDataInjection();
+        return;
+    }
+
+    document.body.classList.add('loading-active');
 
     let currentPercent = 0;
-    const targetInterval = 25;
+    const targetInterval = 25; 
 
-    const countEngine = setInterval(() => {
+    while (currentPercent < 100) {
         currentPercent += Math.floor(Math.random() * 4) + 1;
+        if (currentPercent > 100) currentPercent = 100;
 
-        if (currentPercent >= 100) {
-            currentPercent = 100;
-            clearInterval(countEngine);
+        if (loaderNumEl) loaderNumEl.textContent = currentPercent;
+        if (loaderBarFill) loaderBarFill.style.width = `${currentPercent}%`;
 
-            if (loaderNumEl) loaderNumEl.textContent = currentPercent;
-            if (loaderBarFill) loaderBarFill.style.width = `${currentPercent}%`;
+        await delay(targetInterval);
+    }
 
-            setTimeout(() => {
-                if (preloaderEl) preloaderEl.classList.add('show-brand');
-                if (counterContainer) {
-                    counterContainer.textContent = 'Aurex';
-                }
+    await delay(250);
+    if (preloaderEl) preloaderEl.classList.add('show-brand');
+    if (counterContainer) counterContainer.textContent = 'Aurex';
 
-                setTimeout(() => {
-                    if (preloaderEl) {
-                        preloaderEl.style.opacity = '0';
-                        preloaderEl.style.visibility = 'hidden';
-                    }
+    await delay(1200);
 
-                    document.body.classList.remove('loading-active');
-                    document.body.classList.add('loading-complete');
+    if (preloaderEl) {
+        preloaderEl.style.opacity = '0';
+        preloaderEl.style.visibility = 'hidden';
+    }
 
-                    if (carBrandEl) carBrandEl.textContent = carData[0].brand;
-                    if (carModelEl) carModelEl.textContent = carData[0].model;
-                    if (carImgEl) carImgEl.src = carData[0].imgSrc;
+    document.body.classList.remove('loading-active');
+    document.body.classList.add('loading-complete');
 
-                }, 1200);
-            }, 250);
-        } else {
-            if (loaderNumEl) loaderNumEl.textContent = currentPercent;
-            if (loaderBarFill) loaderBarFill.style.width = `${currentPercent}%`;
-        }
-    }, targetInterval);
+    sessionStorage.setItem('preloader-shown', 'true');
+
+    runDataInjection();
 });
+
+function runDataInjection() {
+    const carDataExists = typeof carData !== 'undefined' && carData.length > 0;
+    if (carDataExists) {
+        if (typeof carBrandEl !== 'undefined' && carBrandEl) carBrandEl.textContent = carData[0].brand;
+        if (typeof carModelEl !== 'undefined' && carModelEl) carModelEl.textContent = carData[0].model;
+        if (typeof carImgEl !== 'undefined' && carImgEl) carImgEl.src = carData[0].imgSrc;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     

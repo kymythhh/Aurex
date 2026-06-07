@@ -1711,22 +1711,3 @@ footer {
         box-sizing: border-box;
     }
 }
-
-html.bypass-preloader #site-preloader {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
-html.bypass-preloader body {
-    overflow: visible !important;
-    overflow-y: auto !important;
-}
-
-html.bypass-preloader .reveal-element {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-    transition: none !important;
-}
