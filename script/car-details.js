@@ -50,15 +50,26 @@ galleryImages.forEach((image, index) => {
 
     thumb.addEventListener("click", () => {
 
+    if (mainImage.src.includes(image)) return;
+
+    mainImage.style.opacity = "0";
+
+    setTimeout(() => {
+
         mainImage.src = image;
 
-        document
-            .querySelectorAll("#thumbnailGallery img")
-            .forEach(img => img.classList.remove("active"));
+        mainImage.onload = () => {
+            mainImage.style.opacity = "1";
+        };
 
-        thumb.classList.add("active");
-    });
+    }, 200);
 
+    document
+        .querySelectorAll("#thumbnailGallery img")
+        .forEach(img => img.classList.remove("active"));
+
+    thumb.classList.add("active");
+});
     thumbnailGallery.appendChild(thumb);
 });
 

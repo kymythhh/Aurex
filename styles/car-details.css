@@ -8,124 +8,349 @@
 }
 
 body {
-    background-color: var(--bg-main);
+    background:
+        radial-gradient(circle at top right,
+        rgba(229,168,75,.08),
+        transparent 35%),
+        #0B0B0B;
     color: var(--text-dim);
     font-family: 'Segoe UI', system-ui, sans-serif;
     margin: 0;
 }
 
-/* --- Layout & Typography --- */
-h1, h2, h3, .car-main-title, .id-title {
-    color: #FFF;
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+.car-main-title,
+.id-title {
+    color: #fff;
 }
 
-.car-description, 
+.car-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.car-description,
 .descr {
     color: var(--text-white);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
-/* --- Breadcrumbs --- */
+/* BREADCRUMB */
+
 .breadcrumb {
     margin-bottom: 20px;
 }
 
 .breadcrumb a {
-    color: #B0B0B0;
+    color: #A5A5A5;
     text-decoration: none;
     font-size: 13px;
-}
-
-.breadcrumb a:hover {
-    text-decoration: none;
 }
 
 .breadcrumb .active {
     color: var(--gold-accent);
-    pointer-events: none;
 }
+/* BADGES */
 
-/* --- Badges --- */
-.track-focus-badge, 
+.track-focus-badge,
 .rating-badge {
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
     font-weight: 700;
 }
 
 .track-focus-badge {
-    background: rgba(229, 168, 75, 0.08);
+    background: rgba(229,168,75,.08);
     color: var(--gold-accent);
+    border: 1px solid rgba(229,168,75,.15);
 }
 
 .rating-badge {
-    background: #141414;
-    color: #FFF;
+    background: #151515;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.05);
 }
 
-/* --- Spec Panels --- */
-.premium-spec-card p {
-    color: var(--text-white) !important;
-    font-style: italic;
-    font-size: 14px;
-    margin-top: -5px;
-    margin-bottom: 15px;
+/* HERO IMAGE */
+
+.hero-image-container {
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,.05);
 }
+
+.hero-image-container img {
+    height: 520px;
+    width: 100%;
+    object-fit: cover;
+    transition: .6s ease;
+}
+
+.hero-image-container:hover img {
+    transform: scale(1.03);
+}
+
+/* THUMBNAILS */
+
+.thumbnail-gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 14px 0;
+}
+
+.thumbnail-gallery img {
+    width: 130px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    opacity: .7;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+
+.thumbnail-gallery img:hover {
+    opacity: 1;
+}
+
+.thumbnail-gallery img.active {
+    opacity: 1;
+    border-color: var(--gold-accent);
+}
+
+/* SPEC CARDS */
+
+.premium-spec-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,18,18,.98),
+            rgba(10,10,10,.98)
+        );
+
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    transition: .3s ease;
+}
+
+.premium-spec-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(229,168,75,.05),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+.premium-spec-card:hover {
+    border-color: rgba(229,168,75,.15);
+    transform: translateY(-2px);
+}
+
+/* SECTION NUMBERS */
+
 .section-num {
     font-family: monospace;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--gold-accent);
+    letter-spacing: 1px;
 }
 
-/* IMPROVED READABILITY: Subtitle text is now set to --text-white */
-.spec-meta-subtitle {
-    color: var(--text-white);
-    font-size: 13px;
-    margin-top: -5px;
-    margin-bottom: 15px;
+/* TITLES */
+
+.id-title {
+    font-size: 2rem;
+    margin-bottom: 8px;
 }
+
+.spec-meta-subtitle,
+.text-muted.small {
+    color: #B4B4B4 !important;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* IMAGE FRAMES */
+
+.image-frame {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+.image-frame img {
+    width: 100%;
+    transition: .6s ease;
+}
+
+.image-frame:hover img {
+    transform: scale(1.05);
+}
+
+#powertrainImage,
+#cockpitImage,
+#chassisImage {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+#card-aerodynamics .row{
+    align-items: center;
+}
+
+#card-aerodynamics .image-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #0a0a0a;
+}
+
+/* subtle glow + depth layer */
+#card-aerodynamics .image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(229,168,75,.08),
+        transparent 60%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* image styling */
+#aeroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    transition: transform .6s ease, filter .6s ease;
+    filter: contrast(1.05) saturate(1.05);
+}
+
+/* hover = cinematic lift */
+#card-aerodynamics .image-frame:hover #aeroImage {
+    transform: scale(1.08);
+}
+
+/* SPEC ITEMS */
 
 .spec-item-row {
     display: flex;
-    gap: 12px;
-    margin-bottom: 15px;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.spec-item-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .spec-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(229,168,75,.05);
+    border: 1px solid rgba(229,168,75,.15);
+
+    border-radius: 10px;
     color: var(--gold-accent);
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .spec-meta-label {
     font-size: 11px;
-    color: var(--text-dim);
-    text-transform: uppercase;
+    color: #8A8A8A;
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: .3px;
+    margin-bottom: 2px;
 }
 
 .spec-meta-value {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-white);
+    line-height: 1.5;
 }
 
-/* --- Booking Sidebar --- */
+/* FEATURE*/
+
+.feature-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.05);
+}
+
+.feature-pill {
+    color: #C5C5C5;
+    font-size: 12px;
+    position: relative;
+}
+
+.feature-pill:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 50%;
+
+    width: 1px;
+    height: 12px;
+
+    background: rgba(255,255,255,.12);
+
+    transform: translateY(-50%);
+}
+
+/* BOOKING SIDEBAR */
+
 .booking-sticky-sidebar {
     position: sticky;
     top: 40px;
 }
 
 .booking-card {
-    background: var(--surface-card);
-    border: 1px solid var(--border-subtle);
-    padding: 20px;
-    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,20,20,.98),
+            rgba(10,10,10,.98)
+        );
+
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 22px;
+    padding: 24px;
 }
 
 .form-label-custom {
-    color: var(--text-white);
+    color: #fff;
     font-size: 11px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -134,54 +359,333 @@ h1, h2, h3, .car-main-title, .id-title {
 
 .form-input-custom {
     width: 100%;
+    height: 48px;
     background: #090909;
-    border: 1px solid var(--border-subtle);
-    color: var(--text-white);
-    padding: 10px;
-    border-radius: 6px;
-    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.06);
+    color: #fff;
+    padding: 0 14px;
+    border-radius: 8px;
+    transition: .25s;
+}
+
+.form-input-custom:focus {
+    outline: none;
+    border-color: rgba(229,168,75,.4);
 }
 
 .btn-confirm-booking {
     width: 100%;
-    padding: 12px;
+    height: 54px;
     background: var(--gold-accent);
     color: #000;
     border: none;
-    border-radius: 6px;
-    font-weight: 600;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: .25s;
 }
 
 .btn-confirm-booking:hover {
     background: #f0b861;
 }
 
-/* --- Gallery --- */
-.thumbnail-gallery {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 10px 0;
+/* DESCRIPTION */
+
+#carDescription {
+    color: #D2D2D2;
+    line-height: 1.9;
+    text-align: justify;
 }
 
-.thumbnail-gallery img {
-    width: 120px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
+/* RESPONSIVE */
 
-.thumbnail-gallery img.active {
-    border-color: var(--gold-accent);
-}
-
-/* --- Responsive --- */
 @media (max-width: 991px) {
+
     .booking-sticky-sidebar {
         position: static;
     }
+
+    .car-main-title {
+        font-size: 2rem;
+    }
+
+    .id-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-image-container img {
+        height: 320px;
+    }
+
+#powertrainImage,
+#cockpitImage,
+#chassisImage {
+    height: 220px;
+}
+
+#aeroImage{
+    height: 260px;
+}
+
+/* BACKGROUND */
+body{
+    background:
+        radial-gradient(circle at top right,
+        rgba(229,168,75,.08),
+        transparent 30%),
+
+        radial-gradient(circle at bottom left,
+        rgba(229,168,75,.04),
+        transparent 35%),
+
+        #090909;
+}
+
+/* GLASS EFFECT */
+.premium-spec-card,
+.booking-card{
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.03),
+        0 20px 50px rgba(0,0,0,.35);
+}
+
+/* CARD HOVER */
+.premium-spec-card:hover{
+    transform: translateY(-4px);
+
+    border-color: rgba(229,168,75,.18);
+
+    box-shadow:
+        0 0 0 1px rgba(229,168,75,.08),
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 40px rgba(229,168,75,.08);
+}
+
+/* TITLE UPGRADE */
+.car-main-title{
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #cfcfcf
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 10px 30px rgba(255,255,255,.08);
+}
+
+/* HERO IMAGE */
+.hero-image-container{
+    animation: floatHero 8s ease-in-out infinite;
+}
+
+@keyframes floatHero{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* MAIN IMAGE TRANSITION */
+#mainCarImage{
+    transition:
+        opacity .35s ease,
+        transform .5s ease;
+}
+
+/* ICONS */
+.spec-icon-wrapper{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229,168,75,.12),
+            rgba(229,168,75,.03)
+        );
+
+    box-shadow:
+        inset 0 0 10px rgba(229,168,75,.08),
+        0 0 12px rgba(229,168,75,.05);
+}
+
+/* ACTIVE THUMBNAIL */
+.thumbnail-gallery img.active{
+
+    border-color: var(--gold-accent);
+
+    box-shadow:
+        0 0 15px rgba(229,168,75,.25);
+
+    animation: thumbPulse 2s infinite;
+}
+
+@keyframes thumbPulse{
+
+    0%{
+        box-shadow:0 0 8px rgba(229,168,75,.15);
+    }
+
+    50%{
+        box-shadow:0 0 22px rgba(229,168,75,.35);
+    }
+
+    100%{
+        box-shadow:0 0 8px rgba(229,168,75,.15);
+    }
+}
+
+.premium-spec-card{
+    animation: fadeUp .7s ease forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BOOK BUTTON */
+.btn-confirm-booking{
+
+    background:
+        linear-gradient(
+            135deg,
+            #E5A84B,
+            #F5C16A
+        );
+
+    box-shadow:
+        0 10px 25px rgba(229,168,75,.25);
+}
+
+.btn-confirm-booking:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(229,168,75,.35);
+}
+
+/* IMAGE FRAME GLOW */
+.image-frame{
+
+    position:relative;
+}
+
+.image-frame::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    border-radius:16px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.04);
+
+    pointer-events:none;
+}
+
+/* GOLD ACCENT LINE */
+.id-title{
+    position:relative;
+    padding-bottom:12px;
+}
+
+.id-title::after{
+
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:60px;
+    height:2px;
+
+    background:var(--gold-accent);
+
+    border-radius:10px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2c2c2c;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--gold-accent);
+}
+
+/* FEATURE TAGS */
+
+.feature-pill{
+
+    transition:.25s ease;
+}
+
+.feature-pill:hover{
+
+    color:var(--gold-accent);
+}
+
+/* PRICE */
+
+#carPrice{
+
+    color:#fff;
+
+    text-shadow:
+        0 0 20px rgba(229,168,75,.15);
+}
+
+/* BADGES */
+
+.track-focus-badge{
+    box-shadow:
+        0 0 12px rgba(229,168,75,.08);
+}
+
+.rating-badge{
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+/* SUBTLE PAGE ENTRY */
+
+.gallery-wrapper{
+    animation: fadeUp .8s ease;
+    }   
+
 }
