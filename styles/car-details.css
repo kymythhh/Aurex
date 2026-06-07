@@ -450,3 +450,117 @@ h1, h2, h3, .car-main-title, .id-title {
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: brightness(0) saturate(100%) invert(64%) sepia(40%) saturate(600%) hue-rotate(3deg);
 }
+
+/* ===== UNIFIED MOBILE STYLE FOR 01 + 03 ===== */
+@media (max-width: 991px) {
+
+  /* FORCE SAME STRUCTURE */
+  #powertrainGrid,
+  #aeroGrid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* SAME CARD BEHAVIOR */
+  #powertrainGrid .spec-item-box,
+  #aeroGrid .spec-item-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 14px;
+    min-height: auto;
+
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 14px;
+  }
+
+  /* SAME ICON SIZE */
+  #powertrainGrid .spec-icon-wrapper,
+  #aeroGrid .spec-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  /* SAME TEXT STYLE */
+  #powertrainGrid .spec-meta-value,
+  #aeroGrid .spec-meta-value {
+    font-size: 13px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* FORCE LANDSCAPE IMAGE FOR BOTH */
+  #aeroImage,
+  #powertrainImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* REMOVE MOBILE HOVER BUGS */
+  #powertrainGrid .spec-item-box:hover,
+  #aeroGrid .spec-item-box:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .booking-sticky-sidebar {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .booking-card {
+    padding: 18px !important;
+    border-radius: 18px;
+  }
+
+  .form-input-custom,
+  input[type="date"] {
+    width: 100% !important;
+    font-size: 14px;
+    height: 46px;
+  }
+
+  .form-label-custom {
+    font-size: 10px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0 12px;
+    border-radius: 10px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  .booking-card .row,
+  .booking-card .col,
+  .booking-card .col-md-6 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Button fix */
+  .btn-confirm-booking {
+    height: 50px;
+    font-size: 14px;
+  }
+}
