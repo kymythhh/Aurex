@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const carIndex = urlParams.get('id');
-
-    if (carIndex === null || !window.cars || window.cars.length === 0) {
+    // 1. Retrieve the explicit ID saved from your showcase screen
+    const savedCarId = localStorage.getItem('selectedCarId');
+    
+    if (typeof window.cars === 'undefined' || !window.cars || window.cars.length === 0) {
+        console.error("The cars.js data script is missing or not loaded yet.");
         document.querySelector(".container").innerHTML = `
             <div class="text-center py-5">
                 <h3 class="text-white">Profile Data Missing</h3>
@@ -11,60 +12,77 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Find car ONLY by its unique ID
-const car = window.cars.find(
-    c => String(c.id) === String(carIndex).trim()
-);
+    let selectedCar = null;
 
-    // Global Core Setup Assignments
-    document.title = `Aurex - ${car.name}`;
-    document.getElementById("breadcrumb-car").innerText = car.name;
-    document.getElementById("carCategory").innerText = car.category.toUpperCase();
-    document.getElementById("carRating").innerText = car.rating.toFixed(1);
-    document.getElementById("carName").innerText = car.name;
-    document.getElementById("carPrice").innerText = `$${car.price}`;
-    document.getElementById("carDescription").innerText = car.description;
-
-    // Set primary showcase layout image
-    const mainImage = document.getElementById("mainCarImage");
-const thumbnailGallery = document.getElementById("thumbnailGallery");
-
-const galleryImages =
-    car.gallery && car.gallery.length
-        ? car.gallery
-        : [car.image];
-
-mainImage.src = galleryImages[0];
-
-thumbnailGallery.innerHTML = "";
-
-galleryImages.forEach((image, index) => {
-
-    const thumb = document.createElement("img");
-
-    thumb.src = image;
-
-    if (index === 0) {
-        thumb.classList.add("active");
+    // Direct ID Parsing validation lookup
+    if (savedCarId !== null && savedCarId !== undefined) {
+        const targetId = parseInt(savedCarId, 10);
+        selectedCar = window.cars.find(item => item.id === targetId);
     }
 
-    thumb.addEventListener("click", () => {
+    // Strict safety fallback ONLY if local storage retrieval yields zero results
+    if (!selectedCar) {
+        console.warn("Requested Car ID not found in database. Defaulting to index 0.");
+        selectedCar = window.cars[0];
+    }
 
-        mainImage.src = image;
+    console.log("Details layout loaded for:", selectedCar.name, "with accurate ID:", selectedCar.id);
 
-        document
-            .querySelectorAll("#thumbnailGallery img")
-            .forEach(img => img.classList.remove("active"));
+    // 2. Global Core Setup Assignments (Consolidated targeting selectedCar)
+    document.title = `Aurex - ${selectedCar.name}`;
+    
+    const breadcrumbEl = document.getElementById("breadcrumb-car");
+    if (breadcrumbEl) breadcrumbEl.innerText = selectedCar.name;
 
-        thumb.classList.add("active");
-    });
+    const categoryEl = document.getElementById("carCategory");
+    if (categoryEl) categoryEl.innerText = selectedCar.category.toUpperCase();
 
-    thumbnailGallery.appendChild(thumb);
-});
+    const ratingEl = document.getElementById("carRating");
+    if (ratingEl) ratingEl.innerText = selectedCar.rating.toFixed(1);
 
-    // --- gallery ---
-    const uniqueCarPhotosPool = (car.gallery && Array.isArray(car.gallery)) 
-        ? car.gallery.filter(photo => photo !== car.image)
+    const nameEl = document.getElementById("carName");
+    if (nameEl) nameEl.innerText = selectedCar.name;
+
+    const priceEl = document.getElementById("carPrice");
+    if (priceEl) priceEl.innerText = `$${selectedCar.price}`;
+
+    const descEl = document.getElementById("carDescription");
+    if (descEl) descEl.innerText = selectedCar.description;
+
+    // 3. Set primary showcase layout image gallery
+    const mainImage = document.getElementById("mainCarImage");
+    const thumbnailGallery = document.getElementById("thumbnailGallery");
+
+    const galleryImages = selectedCar.gallery && selectedCar.gallery.length
+        ? selectedCar.gallery
+        : [selectedCar.image];
+
+    if (mainImage) mainImage.src = galleryImages[0];
+
+    if (thumbnailGallery) {
+        thumbnailGallery.innerHTML = "";
+        galleryImages.forEach((image, index) => {
+            const thumb = document.createElement("img");
+            thumb.src = image;
+
+            if (index === 0) {
+                thumb.classList.add("active");
+            }
+
+            thumb.addEventListener("click", () => {
+                if (mainImage) mainImage.src = image;
+                document.querySelectorAll("#thumbnailGallery img")
+                    .forEach(img => img.classList.remove("active"));
+                thumb.classList.add("active");
+            });
+
+            thumbnailGallery.appendChild(thumb);
+        });
+    }
+
+    // 4. Component Specification Block Processing
+    const uniqueCarPhotosPool = (selectedCar.gallery && Array.isArray(selectedCar.gallery)) 
+        ? selectedCar.gallery.filter(photo => photo !== selectedCar.image)
         : [];
 
     const usedImagesTracker = [];
@@ -106,12 +124,12 @@ galleryImages.forEach((image, index) => {
         cardElement.classList.add("no-image");
     }
 
-    processImageOrCollapse(car.specifications?.powertrain?.image, ["engine", "front"], "powertrainImage", "card-powertrain");
-    processImageOrCollapse(car.specifications?.cockpit?.image, ["interior", "dash"], "cockpitImage", "card-cockpit");
-    processImageOrCollapse(car.specifications?.aerodynamics?.image, ["rear", "side"], "aeroImage", "card-aerodynamics");
-    processImageOrCollapse(car.specifications?.chassis?.image, ["brakes", "brake"], "chassisImage", "card-chassis");
-    // --------------------------------------------------
+    processImageOrCollapse(selectedCar.specifications?.powertrain?.image, ["engine", "front"], "powertrainImage", "card-powertrain");
+    processImageOrCollapse(selectedCar.specifications?.cockpit?.image, ["interior", "dash"], "cockpitImage", "card-cockpit");
+    processImageOrCollapse(selectedCar.specifications?.aerodynamics?.image, ["rear", "side"], "aeroImage", "card-aerodynamics");
+    processImageOrCollapse(selectedCar.specifications?.chassis?.image, ["brakes", "brake"], "chassisImage", "card-chassis");
 
+    // 5. Specification Tables Generator Functions
     function getDynamicIconClass(label) {
         const lower = label.toLowerCase();
         if (lower.includes('engine')) return 'fas fa-cogs';
@@ -172,31 +190,38 @@ galleryImages.forEach((image, index) => {
         }
     }
 
-    if (car.specifications) {
-        if (car.specifications.powertrain) {
-            document.getElementById("powertrainTitle").innerText = car.specifications.powertrain.title || "Powertrain & Propulsion";
-            document.getElementById("powertrainSubtitle").innerText = car.specifications.powertrain.subtitle || "";
-            renderPremiumPanel(car.specifications.powertrain, "powertrainGrid");
+    if (selectedCar.specifications) {
+        if (selectedCar.specifications.powertrain) {
+            const ptTitle = document.getElementById("powertrainTitle");
+            const ptSub = document.getElementById("powertrainSubtitle");
+            if (ptTitle) ptTitle.innerText = selectedCar.specifications.powertrain.title || "Powertrain & Propulsion";
+            if (ptSub) ptSub.innerText = selectedCar.specifications.powertrain.subtitle || "";
+            renderPremiumPanel(selectedCar.specifications.powertrain, "powertrainGrid");
         }
-        if (car.specifications.cockpit) {
-            document.getElementById("cockpitTitle").innerText = car.specifications.cockpit.title || "Cockpit & Infotainment";
-            document.getElementById("cockpitSubtitle").innerText = car.specifications.cockpit.subtitle || "";
-            renderPremiumPanel(car.specifications.cockpit, "cockpitGrid", "cockpitPills");
+        if (selectedCar.specifications.cockpit) {
+            const cpTitle = document.getElementById("cockpitTitle");
+            const cpSub = document.getElementById("cockpitSubtitle");
+            if (cpTitle) cpTitle.innerText = selectedCar.specifications.cockpit.title || "Cockpit & Infotainment";
+            if (cpSub) cpSub.innerText = selectedCar.specifications.cockpit.subtitle || "";
+            renderPremiumPanel(selectedCar.specifications.cockpit, "cockpitGrid", "cockpitPills");
         }
-        if (car.specifications.aerodynamics) {
-            document.getElementById("aeroTitle").innerText = car.specifications.aerodynamics.title || "Aerodynamics & Body Management";
-            document.getElementById("aeroSubtitle").innerText = car.specifications.aerodynamics.subtitle || "";
-            renderPremiumPanel(car.specifications.aerodynamics, "aeroGrid", "aeroPills");
+        if (selectedCar.specifications.aerodynamics) {
+            const aeroTitle = document.getElementById("aeroTitle");
+            const aeroSub = document.getElementById("aeroSubtitle");
+            if (aeroTitle) aeroTitle.innerText = selectedCar.specifications.aerodynamics.title || "Aerodynamics & Body Management";
+            if (aeroSub) aeroSub.innerText = selectedCar.specifications.aerodynamics.subtitle || "";
+            renderPremiumPanel(selectedCar.specifications.aerodynamics, "aeroGrid", "aeroPills");
         }
-        if (car.specifications.chassis) {
-            document.getElementById("chassisTitle").innerText = car.specifications.chassis.title || "Chassis & Braking Dynamics";
-            document.getElementById("chassisSubtitle").innerText = car.specifications.chassis.subtitle || "";
-            renderPremiumPanel(car.specifications.chassis, "chassisGrid", "chassisPills");
+        if (selectedCar.specifications.chassis) {
+            const chTitle = document.getElementById("chassisTitle");
+            const chSub = document.getElementById("chassisSubtitle");
+            if (chTitle) chTitle.innerText = selectedCar.specifications.chassis.title || "Chassis & Braking Dynamics";
+            if (chSub) chSub.innerText = selectedCar.specifications.chassis.subtitle || "";
+            renderPremiumPanel(selectedCar.specifications.chassis, "chassisGrid", "chassisPills");
         }
     }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+    // 6. Sidebar Booking Input Injection
     const savedPickup = localStorage.getItem('search_pickup');
     const savedReturn = localStorage.getItem('search_return');
 

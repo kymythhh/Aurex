@@ -74,40 +74,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // RENDER CARS
+    // RENDER CARS (UPDATED WITH LOCALSTORAGE CLICK TRACKING)
     function renderCars(list) {
-
         carsContainer.innerHTML = "";
 
-        list.forEach((car, index) => {
+        list.forEach((car) => {
+            // Create a wrapper column div
+            const colDiv = document.createElement("div");
+            colDiv.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
 
-            carsContainer.innerHTML += `
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-
-                <a href="car-details.html?id=${car.id}" class="car-card-link">
-
+            // Build the card internal HTML structure
+            colDiv.innerHTML = `
+                <a href="car-details.html?id=${car.id}" class="car-card-link" data-id="${car.id}">
                     <div class="car-card">
-
                         <img src="${car.image}" class="car-img">
-
                         <div class="card-info">
                             <div class="car-brand">${car.brand}</div>
                             <div class="car-name">${car.name}</div>
-
                             <div class="d-flex justify-content-between align-items-center">
                                 <span>⭐ ${car.rating}</span>
                                 <span class="price">$${car.price}/day</span>
                             </div>
                         </div>
-
                         <div class="hover-overlay">
                             <span>View Details</span>
                         </div>
-
                     </div>
-
                 </a>
+            `;
 
-            </div>`;
+            // Intercept click to save selection status explicitly to localStorage
+            const linkElement = colDiv.querySelector(".car-card-link");
+            linkElement.addEventListener("click", (e) => {
+                // Prevent premature standard navigation before writing data
+                e.preventDefault(); 
+                
+                const chosenId = linkElement.getAttribute("data-id");
+                localStorage.setItem('selectedCarId', chosenId);
+                
+                // Now safely proceed to the detail page layout
+                window.location.href = linkElement.getAttribute("href");
+            });
+
+            carsContainer.appendChild(colDiv);
         });
     }
 

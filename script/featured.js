@@ -1,5 +1,6 @@
 const carData = [
     {
+        id: 1,
         brand: "Porsche",
         model: "911 GT3 RS 2023",
         imgSrc: "assets/Porsche/sidePorsche.png",
@@ -35,6 +36,7 @@ const carData = [
         ]
     },
     {
+        id: 21,
         brand: "Dodge",
         model: "Charger RT",
         imgSrc: "assets/Dodge/sideDodge.png",
@@ -70,6 +72,7 @@ const carData = [
         ]
     },
     {
+        id: 11,
         brand: "Lexus",
         model: "LM 350h Ultra",
         imgSrc: "assets/Lexus/sideLexus5.png",
@@ -105,6 +108,7 @@ const carData = [
         ]
     },
     {
+        id: 6,
         brand: "Range Rover",
         model: "SV 2024 Edition",
         imgSrc: "assets/Rover/sideRover.png",
@@ -140,6 +144,7 @@ const carData = [
         ]
     },
     {
+        id: 16,
         brand: "Rolls-Royce",
         model: "Phantom Extended",
         imgSrc: "assets/Rolls/sideRolls.png",
@@ -418,6 +423,39 @@ detailsBtn.addEventListener('click', () => {
     applyAccordionClasses();
     detailsOverlay.classList.add('active');
 });
+
+// --- CONNECT SHOWCASE TO CAR-DETAILS VIA EXPLICIT ID ---
+
+function handleRentalRedirect() {
+    // 1. Double check that carData and our current index exist safely
+    if (typeof carData !== 'undefined' && carData[currentIndex]) {
+        
+        // 2. Extract the exact ID from your featured carData block (e.g., 1, 21, 6, 16)
+        const explicitCarId = carData[currentIndex].id; 
+        
+        // 3. Save that ID into localStorage
+        localStorage.setItem('selectedCarId', explicitCarId);
+        
+        // 4. Safely redirect to your car-details page
+        window.location.href = "car-details.html";
+    }
+}
+
+// Bind to the main "Rent Now" button on your showcase container
+const mainRentBtn = document.querySelector('.cta-container .btn-primary');
+if (mainRentBtn) {
+    mainRentBtn.addEventListener('click', handleRentalRedirect);
+}
+
+// Bind to the "Confirm Rental" button if it is clicked inside the overlay modal
+if (panelColumnsContainer) {
+    panelColumnsContainer.addEventListener('click', (e) => {
+        if (e.target && e.target.classList.contains('btn-primary')) {
+            e.stopPropagation(); // Prevents your spec accordion columns from shifting
+            handleRentalRedirect();
+        }
+    });
+}
 
 if (closeDetailsBtn) {
     closeDetailsBtn.addEventListener('click', () => {
