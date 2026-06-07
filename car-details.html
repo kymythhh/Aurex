@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-7 text-col">
-                                    <div class="row g-3" id="powertrainGrid"></div>
+                                    <div id="powertrainGrid"></div>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                 <!-- Added 'mt-auto' here to push this column lower -->
                                 <div class="col-md-7 text-col mt-auto">
                                     <div class="d-flex flex-column h-100 justify-content-between">
-                                        <div class="row g-3" id="cockpitGrid"></div>
+                                        <div id="cockpitGrid"></div>
                                         <div class="feature-tag-container mt-3" id="cockpitPills"></div>
                                     </div>
                                 </div>
@@ -112,28 +112,40 @@
                         </div>
                        
 
-                        <!-- 03 Aerodynamics Panel -->
-                        <div class="premium-spec-card p-4 mb-4" id="card-aerodynamics">
-                            <div class="row g-4">
-                                <div class="col-md-5 text-col">
-                                    <div class="section-header">
-                                        <div class="section-badge">
-                                            <i class="fas fa-wind"></i>
-                                        </div>
-                                        <span class="section-num">03</span>
-                                    </div>
-                                    <h4 class="text-white fw-bold id-title" id="aeroTitle">Aerodynamics & Body Management</h4>
-                                    <p class="text-muted small" id="aeroSubtitle"></p>
-                                    <div class="row g-3" id="aeroGrid"></div>
+                        <!-- 03 Aerodynamics Panel (MATCHES CHASSIS STYLE) -->
+                <div class="premium-spec-card p-4 mb-4" id="card-aerodynamics">
+                    <div class="row g-4">
+                        
+                        <!-- LEFT: IMAGE -->
+                        <div class="col-md-5 img-col">
+                            <div class="section-header">
+                                <div class="section-badge">
+                                    <i class="fas fa-wind"></i>
                                 </div>
-                                <div class="col-md-6 img-col d-flex flex-column justify-content-between">
-                                    <div class="image-frame h-100 mb-3">
-                                        <img id="aeroImage" src="" class="img-fluid rounded-3 h-100 object-fit-cover" alt="Aero Profile">
-                                    </div>
-                                    <div class="feature-tag-container" id="aeroPills"></div>
-                                </div>
+                                <span class="section-num">03</span>
+                            </div>
+
+                            <h4 class="text-white fw-bold id-title" id="aeroTitle">
+                                Aerodynamics & Body Management
+                            </h4>
+
+                            <p class="text-muted small" id="aeroSubtitle"></p>
+
+                            <div class="mt-2 image-frame aero-frame">
+                                <img id="aeroImage" src="" class="img-fluid rounded-3" alt="Aero Profile">
                             </div>
                         </div>
+
+                        <!-- RIGHT: SPECS -->
+                        <div class="col-md-7 text-col">
+                            <div class="d-flex flex-column h-100 justify-content-between">
+                                <div class="row g-3" id="aeroGrid"></div>
+                                <div class="feature-tag-container mt-3" id="aeroPills"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
                         <!-- 04 Chassis Panel -->
                         <div class="premium-spec-card p-4 mb-4" id="card-chassis">
@@ -154,7 +166,7 @@
                                 <div class="col-md-7 text-col">
                                     <div class="d-flex flex-column h-100 justify-content-between">
                                         <div class="row g-3" id="chassisGrid"></div>
-                                        <div class="feature-tag-container mt-3" id="chassisPills"></div>
+                                        <div id="chassisGrid"></div>
                                     </div>
                                 </div>
                             </div>
