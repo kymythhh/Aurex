@@ -33,16 +33,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (channelMode === 'wallet') {
             document.getElementById('selectorWallet').classList.add('active');
+            
+            // Injects dynamic selection box matching your team's custom clean filter dropdown look[cite: 1]
             inputGatewayContainer.innerHTML = `
                 <div class="form-input-group">
-                    <label>Select E-Wallet Provider</label>
-                    <input type="text" placeholder="e.g., GCash, Maya, PayPal" required />
+                    <label>Select Digital Wallet Provider</label>
+                    <select id="walletProvider" class="form-input-custom" required>
+                        <option value="" disabled selected hidden>Choose your wallet...</option>
+                        <option value="GCash">GCash</option>
+                        <option value="Maya">Maya</option>
+                        <option value="GrabPay">GrabPay</option>
+                        <option value="PayPal">PayPal Wallet</option>
+                    </select>
                 </div>
                 <div class="form-input-group">
-                    <label>Account Mobile Number / ID</label>
-                    <input type="text" placeholder="e.g., 0917XXXXXXX" required />
+                    <label>Account Mobile Number</label>
+                    <!-- Pre-loaded with standard 09 PH validation value string -->
+                    <input type="text" id="walletPhone" value="09" placeholder="09XXXXXXXXX" inputmode="numeric" maxlength="11" pattern="09[0-9]{9}" title="Please provide a valid 11-digit Philippine mobile phone number starting with 09." required />
+                    <small id="walletLengthHint" style="color: #e74c3c; font-size: 11px; margin-top: 4px; transition: color 0.3s;">Must be exactly 11 digits (2/11).</small>
                 </div>
             `;
+
+            // Enforcement rule hook for digital wallet validation metrics
+            const walletPhoneInput = document.getElementById('walletPhone');
+            const lengthHint = document.getElementById('walletLengthHint');
+            
+            if (walletPhoneInput) {
+                walletPhoneInput.addEventListener('input', (e) => {
+                    let cleanNum = e.target.value.replace(/\D/g, '');
+                    
+                    // REVISION ENFORCEMENT: Ensure input always locks prefix to 09
+                    if (!cleanNum.startsWith('09')) {
+                        if (cleanNum.startsWith('9')) {
+                            cleanNum = '09' + cleanNum.slice(1);
+                        } else {
+                            cleanNum = '09' + cleanNum;
+                        }
+                    }
+                    
+                    // Cap bounds length check protection safeguard
+                    if (cleanNum.length > 11) {
+                        cleanNum = cleanNum.slice(0, 11);
+                    }
+                    
+                    e.target.value = cleanNum;
+
+                    // Update live feedback text layout colors dynamically
+                    if (cleanNum.length === 11) {
+                        lengthHint.style.color = '#2ecc71';
+                        lengthHint.innerText = "✓ Valid 11-digit mobile configuration locked.";
+                    } else {
+                        lengthHint.style.color = '#e74c3c';
+                        lengthHint.innerText = `Must be exactly 11 digits (${cleanNum.length}/11).`;
+                    }
+                });
+
+                // REVISION ENFORCEMENT: Blocks backspacing deletion over the primary '09' country prefix
+                walletPhoneInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && walletPhoneInput.value.length <= 2) {
+                        e.preventDefault();
+                    }
+                });
+            }
         } else {
             document.getElementById('selectorCard').classList.add('active');
             inputGatewayContainer.innerHTML = `
@@ -52,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="form-input-group">
                     <label>Credit Card Number</label>
-                    <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required />
+                    <input type="text" id="ccNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" inputmode="numeric" required />
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6">
@@ -70,16 +122,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // ==========================================================================
-            // SMART EXPIRATION DATE AUTOMATIC "/" INJECTION FORMATTER
-            // ==========================================================================
+            // Smart Credit Card Number spacing formatter (every 4 digits automatically)
+            const ccInput = document.getElementById('ccNumber');
+            if (ccInput) {
+                ccInput.addEventListener('input', (e) => {
+                    let textValue = e.target.value.replace(/\D/g, ''); 
+                    let groupedValue = textValue.match(/.{1,4}/g); 
+                    
+                    if (groupedValue) {
+                        e.target.value = groupedValue.join(' '); 
+                    } else {
+                        e.target.value = textValue;
+                    }
+                });
+            }
+
+            // Expiration slash auto format injector
             const expiryInput = document.getElementById('ccExpiry');
             if (expiryInput) {
                 expiryInput.addEventListener('input', (e) => {
-                    let rawValue = e.target.value.replace(/\D/g, ''); // Strip all non-numerical entries
-                    
+                    let rawValue = e.target.value.replace(/\D/g, '');
                     if (rawValue.length >= 2) {
-                        // Automatically inject slash if two numbers for month are typed
                         e.target.value = rawValue.slice(0, 2) + '/' + rawValue.slice(2, 4);
                     } else {
                         e.target.value = rawValue;
@@ -87,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 expiryInput.addEventListener('keydown', (e) => {
-                    // Smooth backspacing: cleanly drops character flags if deleting back into month side
                     if (e.key === 'Backspace' && expiryInput.value.length === 3) {
                         expiryInput.value = expiryInput.value.slice(0, 2);
                         e.preventDefault();
@@ -97,14 +159,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 3. Initialize default checkout card grid field layout footprint
+    // Initialize layout default card footprint view
     togglePaymentGatewayMode('card');
 
-    // 4. Intercept submission form pipelines to execute receipt simulation overlays
+    // Intercept form validations before completing secure token simulations
     const securePaymentFormEl = document.getElementById('securePaymentForm');
     if (securePaymentFormEl) {
         securePaymentFormEl.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Intercept submit request loops if digital wallets don't reach 11 parameters
+            const walletPhoneInput = document.getElementById('walletPhone');
+            if (walletPhoneInput && walletPhoneInput.value.length !== 11) {
+                alert("Transaction denied: Your mobile digital wallet identification must be exactly 11 digits starting with 09.");
+                walletPhoneInput.focus();
+                return;
+            }
 
             const authorizeBtn = document.getElementById('submitPaymentBtn');
             if (authorizeBtn) {
@@ -112,25 +182,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 authorizeBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-2"></i> Verifying Secured Asset Tokens...`;
             }
 
-            // Simulate financial gateway verification checks delay
             setTimeout(() => {
                 const generatedReceiptNumber = Math.floor(100000 + Math.random() * 900000);
                 
-                // Hydrate live text attributes into complete overlay view panel frames
                 document.getElementById('successReceiptCode').innerText = `RECEIPT: AX-${generatedReceiptNumber}`;
                 document.getElementById('successClientName').innerText = activeBooking ? activeBooking.clientName : "Juan Dela Cruz";
                 document.getElementById('successCarName').innerText = activeBooking ? activeBooking.carName : "Premium Fleet Asset";
                 document.getElementById('successTotalCost').innerText = activeBooking ? `$${activeBooking.totalCost.toLocaleString()}` : "$0";
 
-                // Turn on modal container view properties
                 document.getElementById('successLayerModal').classList.add('active');
             }, 2000);
         });
     }
 
-    /**
-     * Clears temporary local state memory variables and performs graceful redirect back to landing module
-     */
     window.clearCacheAndReturnHome = function() {
         localStorage.removeItem('activeBookingSummary');
         window.location.href = "featured.html";

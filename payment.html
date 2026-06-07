@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurex - Secure Checkout Payment</title>
 
+    <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- CSS Modules -->
     <link rel="stylesheet" href="styles/all-cars.css">
     <link rel="stylesheet" href="styles/payment.css">
     <style>
@@ -21,6 +24,7 @@
 </head>
 <body>
 
+    <!-- NAV HEADER -->
     <header>
         <div class="logo">
             <img src="assets/Logo.png" alt="Aurex Logo">
@@ -28,6 +32,7 @@
         </div>
     </header>
 
+    <!-- CONTENT WRAPPER -->
     <main class="page-content">
         <div class="container py-4 mt-5">
 
@@ -42,8 +47,10 @@
                 </p>
             </div>
 
+            <!-- PAYMENT CONTENT GRID -->
             <div class="row g-4 position-relative">
                 
+                <!-- LEFT SIDE: SECURE PAYMENT INSTRUMENT CARD FORM -->
                 <div class="col-lg-7">
                     <div class="contact-form-card">
                         <span class="section-tagline">Secure Gateway Step 2</span>
@@ -51,10 +58,11 @@
                             Payment Selection Method
                         </h2>
 
+                        <!-- Elite Method Toggle Selectors -->
                         <div class="payment-method-selectors mb-4">
                             <div class="gateway-option-card active" id="selectorCard" onclick="togglePaymentGatewayMode('card')">
                                 <i class="fa-solid fa-credit-card"></i>
-                                <span>Premium Card</span>
+                                <span>Credit Card</span> <!-- Updated text alignment tag label -->
                             </div>
                             <div class="gateway-option-card" id="selectorWallet" onclick="togglePaymentGatewayMode('wallet')">
                                 <i class="fa-solid fa-wallet"></i>
@@ -62,9 +70,11 @@
                             </div>
                         </div>
 
+                        <!-- Runtime Form Fields Intermediary Hook -->
                         <form id="securePaymentForm">
                             <div id="dynamicInputGatewayFields">
-                                </div>
+                                <!-- Element modules injected programmatically via payment.js -->
+                            </div>
 
                             <button type="submit" id="submitPaymentBtn" class="message-btn btn-white w-100 mt-2 justify-content-center" style="font-size: 14px; padding: 16px 30px;">
                                 Authorize & Confirm Payment <i class="fa-solid fa-lock ms-2"></i>
@@ -73,6 +83,7 @@
                     </div>
                 </div>
 
+                <!-- RIGHT SIDE: ACTIVE COMPRESSED MANIFEST TRANSACTION SUMMARY -->
                 <div class="col-lg-5">
                     <div class="payment-sticky-sidebar">
                         <div class="booking-card p-4 rounded-4 text-white">
@@ -119,6 +130,7 @@
         </div>
     </main>
 
+    <!-- IMMERSIVE TRANSACTION COMPLETE SUCCESS OVERLAY MODAL -->
     <div class="success-overlay" id="successLayerModal">
         <div class="success-modal-card">
             <div class="success-check-circle">
@@ -152,6 +164,7 @@
         </div>
     </div>
 
+    <!-- JS Core Script Linking -->
     <script src="script/payment.js"></script>
 </body>
 </html>

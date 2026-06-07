@@ -2,6 +2,22 @@
    Aurex Premium Car Rental - Modular Payment Gateway Style View Component
    ========================================================================== */
 
+/* --- Reset & Global Variable Foundations --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0d0c; /*[cite: 5] */
+    color: #B0B0B0; /*[cite: 5] */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 header, .page-content {
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -152,6 +168,40 @@ header, .page-content {
     font-weight: 600;
 }
 
+/* PREMIUM UNIFIED WALLET DROPDOWN SELECTOR OVERRIDES */
+select.form-input-custom {
+    background-color: #1A1A1A !important;
+    border: 1px solid #3C4144 !important;
+    color: #ffffff !important;
+    padding: 12px 16px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23e5a84b' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 14px !important;
+    padding-right: 45px !important;
+}
+
+select.form-input-custom option {
+    background-color: #111110 !important;
+    color: #B0B0B0 !important;
+    padding: 12px !important;
+}
+
+select.form-input-custom option:hover,
+select.form-input-custom option:focus,
+select.form-input-custom option:active,
+select.form-input-custom option:checked {
+    background-color: #1c1c1a !important;
+    color: #E5A84B !important;
+}
+
 /* GATEWAY TRANSITION SUCCESS LAYERS MODAL OVERLAYS */
 .success-overlay {
     position: fixed;
@@ -232,7 +282,7 @@ header, .page-content {
     border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* REVISION FIX: Forces perfect high contrast color match for receipt block items */
+/* REVISION FIX: Forces matching readable grey tint parameter inside layout overlay panels */
 .receipt-summary-block .text-muted {
     color: #B0B0B0 !important; /*[cite: 5] */
     font-weight: 500;

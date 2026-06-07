@@ -48,6 +48,16 @@ header, .page-content {
     border-color: #CB973D; /*[cite: 5] */
 }
 
+/* REVISION FIX: Blocks browser autofill overrides from coloring fields white or light blue */
+.form-input-group input:-webkit-autofill,
+.form-input-group input:-webkit-autofill:hover, 
+.form-input-group input:-webkit-autofill:focus, 
+.form-input-group input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 0px 1000px rgba(0, 0, 0, 0.2) !important;
+}
+
 .message-btn {
     background-color: #E5A84B; /*[cite: 5] */
     color: #000; /*[cite: 5] */
@@ -138,17 +148,4 @@ header, .page-content {
     .summary-image-frame img {
         height: 180px;
     }
-}
-
-/* Ensure the text contrast color rule aligns perfectly */
-.schedule-review-box .text-muted,
-.cost-summary .text-muted {
-    color: #B0B0B0 !important;
-    font-weight: 500;
-    font-style: normal !important;
-}
-
-#reviewTerminal {
-    color: #ffffff;
-    font-weight: 600;
 }
