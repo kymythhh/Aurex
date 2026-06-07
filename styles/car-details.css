@@ -138,34 +138,44 @@ h1, h2, h3, .car-main-title, .id-title {
 /* --- Cards & Sections --- */
 
 .premium-spec-card {
-  background: linear-gradient(135deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98));
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 22px;
-  overflow: hidden;
-  position: relative;
-  transition: 0.3s ease;
+    background: rgba(20, 20, 20, 0.4); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 32px !important;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.premium-spec-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(229, 168, 75, 0.05), transparent 40%);
-  pointer-events: none;
+.section-header {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
-.premium-spec-card:hover { border-color: rgba(229, 168, 75, 0.15); transform: translateY(-2px); }
-
-.section-header { 
-  display: flex; 
-  align-items: center; 
-  gap: 0; 
-  margin-bottom: 18px; 
+.section-num {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    margin-right: 16px;
+    letter-spacing: -0.5px;
 }
 
-.section-badge {
-  display: none !important;
+.id-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 !important; 
 }
+
+.section-badge { display: none !important; }
 
 /* --- Aerodynamics Specific --- */
 
@@ -197,24 +207,50 @@ h1, h2, h3, .car-main-title, .id-title {
 
 /* --- Specs & Features --- */
 
-.spec-item-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-.spec-item-row:last-child { border-bottom: none; margin-bottom: 0; }
-
-.spec-icon-wrapper {
-  width: 40px; height: 40px; min-width: 40px; display: flex; align-items: center; justify-content: center;
-  background: rgba(229, 168, 75, 0.05); border: 1px solid rgba(229, 168, 75, 0.15);
-  border-radius: 10px; color: var(--gold-accent); font-size: 14px;
+.spec-item-row {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: none !important;
 }
 
-.spec-meta-label { font-size: 11px; color: #8a8a8a; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 2px; }
-.spec-meta-value { font-size: 14px; color: var(--text-white); line-height: 1.5; }
+.spec-icon-wrapper {
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: rgba(229, 168, 75, 0.05); 
+    border: 1px solid rgba(229, 168, 75, 0.15);
+    border-radius: 10px; 
+    color: var(--gold-accent); 
+    font-size: 14px;
+}
 
-.feature-tag-container { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-.feature-pill { color: #c5c5c5; font-size: 12px; position: relative; transition: 0.25s ease; }
-.feature-pill:hover { color: var(--gold-accent); }
-.feature-pill:not(:last-child)::after {
-  content: ""; position: absolute; right: -6px; top: 50%; width: 1px; height: 12px;
-  background: rgba(255, 255, 255, 0.12); transform: translateY(-50%);
+.spec-meta-label { 
+    display: block;
+    font-size: 11px; 
+    color: #8a8a8a; 
+    font-weight: 600; 
+    letter-spacing: 0.3px; 
+    margin-bottom: 2px; 
+}
+
+.spec-meta-value { 
+    display: block;
+    font-size: 14px; 
+    color: var(--text-white); 
+    line-height: 1.5; 
+}
+
+.feature-tag-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    padding-top: 14px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
 /* --- Forms & Booking --- */
