@@ -1,12 +1,6 @@
-/**
- * Aurex Premium Car Rental - Payment Processing Pipeline Controller
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Recover un-marshaled client booking summary state from localStorage cache
     const activeBooking = JSON.parse(localStorage.getItem('activeBookingSummary'));
 
-    // 2. Safely populate manifest display values if storage data exists
     if (activeBooking) {
         document.getElementById('manifestBrand').innerText = activeBooking.carBrand.toUpperCase();
         document.getElementById('manifestCarName').innerText = activeBooking.carName;
@@ -25,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /**
      * Alternates input form structures depending on chosen payment method channels
-     * @param {string} channelMode - Token parameter string ('card' or 'wallet')
+     * @param {string} channelMode
      */
     window.togglePaymentGatewayMode = function(channelMode) {
         document.getElementById('selectorCard').classList.remove('active');
@@ -34,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (channelMode === 'wallet') {
             document.getElementById('selectorWallet').classList.add('active');
             
-            // Injects dynamic selection box matching your team's custom clean filter dropdown look[cite: 1]
             inputGatewayContainer.innerHTML = `
                 <div class="form-input-group">
                     <label>Select Digital Wallet Provider</label>
@@ -54,15 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // Enforcement rule hook for digital wallet validation metrics
             const walletPhoneInput = document.getElementById('walletPhone');
             const lengthHint = document.getElementById('walletLengthHint');
             
             if (walletPhoneInput) {
                 walletPhoneInput.addEventListener('input', (e) => {
                     let cleanNum = e.target.value.replace(/\D/g, '');
-                    
-                    // REVISION ENFORCEMENT: Ensure input always locks prefix to 09
+
                     if (!cleanNum.startsWith('09')) {
                         if (cleanNum.startsWith('9')) {
                             cleanNum = '09' + cleanNum.slice(1);
@@ -70,15 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
                             cleanNum = '09' + cleanNum;
                         }
                     }
-                    
-                    // Cap bounds length check protection safeguard
+
                     if (cleanNum.length > 11) {
                         cleanNum = cleanNum.slice(0, 11);
                     }
                     
                     e.target.value = cleanNum;
 
-                    // Update live feedback text layout colors dynamically
                     if (cleanNum.length === 11) {
                         lengthHint.style.color = '#2ecc71';
                         lengthHint.innerText = "✓ Valid 11-digit mobile configuration locked.";
@@ -88,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                // REVISION ENFORCEMENT: Blocks backspacing deletion over the primary '09' country prefix
                 walletPhoneInput.addEventListener('keydown', (e) => {
                     if (e.key === 'Backspace' && walletPhoneInput.value.length <= 2) {
                         e.preventDefault();
@@ -122,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // Smart Credit Card Number spacing formatter (every 4 digits automatically)
             const ccInput = document.getElementById('ccNumber');
             if (ccInput) {
                 ccInput.addEventListener('input', (e) => {
@@ -137,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            // Expiration slash auto format injector
             const expiryInput = document.getElementById('ccExpiry');
             if (expiryInput) {
                 expiryInput.addEventListener('input', (e) => {
@@ -159,16 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Initialize layout default card footprint view
     togglePaymentGatewayMode('card');
 
-    // Intercept form validations before completing secure token simulations
     const securePaymentFormEl = document.getElementById('securePaymentForm');
     if (securePaymentFormEl) {
         securePaymentFormEl.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Intercept submit request loops if digital wallets don't reach 11 parameters
             const walletPhoneInput = document.getElementById('walletPhone');
             if (walletPhoneInput && walletPhoneInput.value.length !== 11) {
                 alert("Transaction denied: Your mobile digital wallet identification must be exactly 11 digits starting with 09.");

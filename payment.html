@@ -58,11 +58,10 @@
                             Payment Selection Method
                         </h2>
 
-                        <!-- Elite Method Toggle Selectors -->
                         <div class="payment-method-selectors mb-4">
                             <div class="gateway-option-card active" id="selectorCard" onclick="togglePaymentGatewayMode('card')">
                                 <i class="fa-solid fa-credit-card"></i>
-                                <span>Credit Card</span> <!-- Updated text alignment tag label -->
+                                <span>Credit Card</span>
                             </div>
                             <div class="gateway-option-card" id="selectorWallet" onclick="togglePaymentGatewayMode('wallet')">
                                 <i class="fa-solid fa-wallet"></i>
@@ -73,7 +72,6 @@
                         <!-- Runtime Form Fields Intermediary Hook -->
                         <form id="securePaymentForm">
                             <div id="dynamicInputGatewayFields">
-                                <!-- Element modules injected programmatically via payment.js -->
                             </div>
 
                             <button type="submit" id="submitPaymentBtn" class="message-btn btn-white w-100 mt-2 justify-content-center" style="font-size: 14px; padding: 16px 30px;">
@@ -83,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE: ACTIVE COMPRESSED MANIFEST TRANSACTION SUMMARY -->
                 <div class="col-lg-5">
                     <div class="payment-sticky-sidebar">
                         <div class="booking-card p-4 rounded-4 text-white">
@@ -130,7 +127,6 @@
         </div>
     </main>
 
-    <!-- IMMERSIVE TRANSACTION COMPLETE SUCCESS OVERLAY MODAL -->
     <div class="success-overlay" id="successLayerModal">
         <div class="success-modal-card">
             <div class="success-check-circle">
@@ -164,7 +160,6 @@
         </div>
     </div>
 
-    <!-- JS Core Script Linking -->
     <script src="script/payment.js"></script>
 </body>
 </html>
