@@ -180,6 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.clearCacheAndReturnHome = function() {
         localStorage.removeItem('activeBookingSummary');
-        window.location.href = "featured.html";
+        window.location.href = "index.html";
     };
 });
